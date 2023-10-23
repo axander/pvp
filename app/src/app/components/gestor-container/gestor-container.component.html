@@ -1,0 +1,15 @@
+<div>
+    <app-documents-container></app-documents-container>
+    <app-config-container 
+    [ngClass]="{
+        'toogle_gestor_left_direction_left':((!gestorContainerDirection || gestorContainerDirection == 'left') && !gestorHidden),
+        'toogle_gestor_left_direction_right':((!gestorContainerDirection || gestorContainerDirection == 'left') && visible  && gestorHidden),
+        'toogle_gestor_left_direction_right_hidden':((!gestorContainerDirection || gestorContainerDirection == 'left') && !visible),
+
+
+        'toogle_gestor_right_direction_right':((gestorContainerDirection && gestorContainerDirection == 'right') && !gestorHidden),
+        'toogle_gestor_right_direction_left':((gestorContainerDirection && gestorContainerDirection == 'right') && visible  && gestorHidden),
+        'toogle_gestor_right_direction_right_hidden':((gestorContainerDirection && gestorContainerDirection == 'right') && !visible),
+    }"
+    ></app-config-container>
+</div>

@@ -1,0 +1,124 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    width: 100%;
+
+    >div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .document-group-item-footer-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: auto;
+        color: white;
+
+        &:nth-child(1) {
+            margin-left: auto;
+        }
+
+        .page {
+            width: 16px;
+            height: 16px;
+            margin: 0 $main-margin 0 0;
+            -webkit-mask: url($plugin-assets + "assets/images/file-empty.svg") no-repeat 0 0;
+            mask: url($plugin-assets + "assets/images/file-empty.svg") no-repeat 0 0;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            background: white;
+        }
+
+        .book {
+            width: 16px;
+            height: 16px;
+            margin: 0 $main-margin 0 0;
+            -webkit-mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+            mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            background: white;
+        }
+
+        .uploaded {
+            width: 16px;
+            height: 16px;
+            margin: 0 $main-margin 0 0;
+            -webkit-mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+            mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            background: white;
+        }
+        .ammount {
+            background: $secondary;
+            padding: $main-padding-reduce;
+            border-radius: $border-radius-min;
+            color: white;
+        }
+    }
+}
+@media (max-width: $screen-sm) {
+    :host {
+        width: 100%;
+    
+        >div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .document-group-item-footer-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            color: white;
+    
+            &:nth-child(1) {
+                
+            }
+    
+            .page {
+                width: 16px;
+                height: 16px;
+                margin: 0 $main-margin 0 0;
+                -webkit-mask: url($plugin-assets + "assets/images/file-empty.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/file-empty.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+    
+            .book {
+                width: 16px;
+                height: 16px;
+                margin: 0 $main-margin 0 0;
+                -webkit-mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+    
+            .uploaded {
+                width: 16px;
+                height: 16px;
+                margin: 0 $main-margin 0 0;
+                -webkit-mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+            .ammount {
+                background: $secondary;
+                padding: $main-padding-reduce;
+                border-radius: $border-radius-min;
+                color: white;
+            }
+        }
+    }
+}

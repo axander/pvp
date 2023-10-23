@@ -1,0 +1,7 @@
+<div>
+    <div class="counter-container">
+        <div class="counter-decrement" (click)="decrement($event)">-</div>
+        <input type="number" [(ngModel)]="data$.value" (ngModelChange)="change($event)"  />
+        <div class="counter-increment" (click)="increment($event)">+</div>
+    </div>
+</div>

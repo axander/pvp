@@ -1,0 +1,115 @@
+@import "../../../assets/styles/variables";
+
+:host {
+
+    .gestor-config-item-container {
+        padding: $main-padding;
+        border-bottom: 1px dashed $primary;
+
+        &.gestor-config-item-container-hor {
+            display: flex;
+
+            .gestor-config-item-options-container {
+                margin-left: auto;
+                margin-top: 0px;
+            }
+        }
+
+        .gestor-config-item-options-container {
+            margin: 20px 0 $main-margin 0;
+        }
+
+
+    }
+
+    .gestor-config-item-rot {
+        display: flex;
+        align-items: center;
+
+        .gestor-config-item-text {
+            max-width: 80%;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .gestor-config-item-description {
+            max-width: 80%;
+            text-transform: uppercase;
+            font-size: 0.52rem;
+            font-weight: 400;
+        }
+        .gestor-config-item-info {
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            margin-left: 10px;
+            border-radius: 50%;
+            background-color: $primary-orange;
+            //border: 1px solid $primary-orange;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+
+            &::before {
+                content: "i";
+                color: white;
+                text-transform: lowercase;
+            }
+
+            &:hover {
+                color: white;
+                background: $secondary;
+
+                &::before {
+                    content: "i";
+                    color: white;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+    .info {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        transition: all .5s;           
+        &.modal-cpdo-close{
+            pointer-events:none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+        &.modal-cpdo-open{
+            pointer-events:all;
+            background-color: rgba(255, 255, 255, .8);
+            .modal-cpdo {
+                opacity: 1;
+                top: 50%;
+            }
+        }
+        .modal-cpdo {
+            position: fixed;
+            width: 60%;
+            top: 45%;
+            left: 50%;
+            padding: 15px;
+            text-align: center;
+            //background-color: #fafafa;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+        }
+    }
+
+    
+}

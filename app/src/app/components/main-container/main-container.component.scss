@@ -1,0 +1,46 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    position: relative;
+   display: flex;
+   justify-content: center;
+    .main-container {
+        width: 40%;
+        >div {
+            text-align: center;
+        }
+
+        .accessPB {
+            cursor: pointer;
+        }
+    }
+
+    .file-input {
+        display: none;
+      }
+
+}
+
+@media (max-width: $screen-sm) {
+    :host {
+        position: relative;
+   display: flex;
+   justify-content: center;
+    
+    .main-container {
+        width: 90%;
+        >div {
+            text-align: center;
+        }
+
+        .accessPB {
+            cursor: pointer;
+        }
+    }
+
+    .file-input {
+        display: none;
+      }
+    }
+
+}

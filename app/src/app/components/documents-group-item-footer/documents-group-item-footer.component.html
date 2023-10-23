@@ -1,0 +1,20 @@
+<div>
+    <div class="document-group-item-footer-item">
+        <div class="page"></div>
+        <div>{{pages}} {{(pages > 1 ? 'GENERIC.PAGES' : 'GENERIC.PAGE') | translate}} | {{sheets}} {{(sheets > 1 ? 'GENERIC.SHEETS' : 'GENERIC.SHEET') | translate}}</div>
+
+    </div>
+    <div class="document-group-item-footer-item">
+        <div class="book"></div>
+        <div>{{copies}} {{ (copies>1 ? 'GENERIC.COPIES' : 'GENERIC.COPY' ) | translate}}</div>
+
+    </div>
+    <div class="document-group-item-footer-item">
+        <div class="uploaded"></div>
+        <div>{{weight}}</div>
+
+    </div>
+    <div class="document-group-item-footer-item ">
+        <div class="ammount">{{(ammount + ammountFinished) | number : '1.2-2'}} €</div>
+    </div>
+</div>

@@ -1,0 +1,300 @@
+<div [ngClass]="{'selected':!group$.selected}" (click)="selectGroup($event)">
+    <div class="main-visor" [appDroppable]={id:group$.id} (onDragEventCss)="onZoneEvent($event)" [id]="group$.id"
+        [ngClass]="{'main-visor-show':mainVisor,'selected':!group$.selected}">
+        <div class="document-group-item-header" [ngClass]="{'document-group-item-header-selected':group$.selected}">
+            <div class="document-group-item-header-rot">{{ "GENERIC.GROUP" | translate}} {{index}}</div>
+            <div class="document-group-item-header-numDocs">( {{group$.files.length}} {{ (group$.files.length > 1 ||
+                !group$.files.length ?
+                "GENERIC.DOCS" : "GENERIC.DOC")| translate}} )</div>
+            <div class="document-group-item-header-addPDF">
+                <!--<div class="document-group-item-header-addPDF-icon" (click)="addDoc($event)">
+            </div>-->
+                <app-file-uploader [id]="group$.id" [mode]="'singularDoc'"></app-file-uploader>
+                <!--<div class="document-group-item-header-addPDF-rot">{{ "GENERIC.ADD" | translate}}</div>-->
+            </div>
+            <div class="document-group-item-header-see-pdf" (click)="toogleMainVisor($event)">
+                <div class="document-group-item-header-see-pdf-icon"></div>
+                <!--<div class="document-group-item-header-delete-rot">{{ "GENERIC.DELETE" | translate}}{{" "}} {{ "GENERIC.GROUP" | translate}}</div>-->
+            </div>
+            <div class="document-group-item-header-delete" (click)="deleteGroup($event)">
+                <div class="document-group-item-header-delete-icon"></div>
+                <!--<div class="document-group-item-header-delete-rot">{{ "GENERIC.DELETE" | translate}}{{" "}} {{ "GENERIC.GROUP" | translate}}</div>-->
+            </div>
+        </div>
+        <div class="document-group-item-flags">
+            <app-documents-group-item-flags [data]="group$.gestor.options"></app-documents-group-item-flags>
+        </div>
+        <div *ngIf="group$.files.length" class="document-group-item-docs">
+            <div *ngIf="group$.files.length" class="document-group-item-docs-singular">
+                <div class="document-group-item-docs-singular-pdf-container"
+                    [ngClass]="{'max-oblong':toogleMax && orientation=='oblong','max-vertical':toogleMax && orientation=='vertical'}">
+                    <div *ngIf="toogleMax" (click)="showBig()" class="toogleMax">cerrar
+                    </div>
+                    <div class="document-group-item-docs-singular-pdf">
+                        <pdf-viewer *ngIf="group$.files.length" class="pdf-viewer"
+                            [ngClass]="{'oblong':oblong && slidesPerPage==1,'hide':slidesPerPage!=1}" [src]="pdfSrc"
+                            [show-all]="false" [render-text]="false" [fit-to-page]="true" [original-size]="true"
+                            [page]="page" [autoresize]="true" [show-borders]="false" [zoom-scale]="'page-width'"
+                            (after-load-complete)="afterLoadComplete($event)" (page-rendered)="pageRendered()">
+                        </pdf-viewer>
+                        <div class="main-result"
+                            [className]="'main-result main-result-' + orientation +' main-result-authomatic-' + group$.authomatic + (config.doubleFace ?' doubleFace':'')+ ((config.doubleFace && ( page == 1 || page == pages )) ?' first-page':'')+ ( orientation =='oblong' && mainTurnPage =='long-side' && page !=1  ? ' adjust-turn-page' : '')"
+                            [style.transform]="page!= 1 && config.doubleFaceDirection ? orientation =='oblong' ?'scale(0.5) rotate(-180deg)': 'scale(0.8) rotate(-180deg)': config.doubleFace && orientation =='oblong'? 'scale(0.5)':'scale(0.8)'">
+                            <div [className]="'main-result-container main-result-origin-' + focusedFile.authomatic + ' main-result-container-' + config.perPage + (config.rotation ? ' rotation'  : '')"
+                                [ngClass]="adjustNumSlides">
+                                <div [className]="'thumbnail'"
+                                    *ngFor="let item of finalThumbnails | slice:(page-1)*config.perPage:(page )*config.perPage"
+                                    [ngStyle]="{'opacity': item.hidden ? 0 : 1}">
+                                    <img src="{{item?.url}}" [style.width]="imageWidth"
+                                        [style.transform]="'rotate('+ config.rotation + 'deg)'"
+                                        [ngClass]="{'thumbnailpage-page-color':item?.color}" />
+                                    <!--<span class="pagenumber">{{item?.page}}</span>-->
+                                </div>
+                            </div>
+                            <!--<div class="obverse" *ngIf="config.doubleFace">anverso</div> *ngIf="!finishedOrientation"-->
+                            <div *ngIf=" !config.doubleFace || (config.doubleFace && mainFinished != 'stapled-creased' && mainFinished != 'spiral') || (config.doubleFace && page==1 && mainFinished == 'spiral') || (config.doubleFace && page!=1 && mainFinished == 'spiral' && orientation=='vertical' && mainTurnPage =='short-side') || (config.doubleFace && page !=1 && page !=pages && mainFinished == 'stapled-creased')"
+                                class="main-result-finished"
+                                [className]="
+                                (!finishedOrientation || mainFinished =='stapled' || mainFinished =='stapled-creased') 
+                                ? 'main-result-finished' + ( config.doubleFace && focusedFile.authomatic=='oblong' && orientation =='oblong' && mainTurnPage =='short-side' && page !=1  ? ' adjust-turn-page-short-side' : (page != 1 && config.doubleFace && mainFinished !='stapled-creased' ) ? mainFinished !='stapled' ? ' adjust-turn-page-long-side':' adjust-turn-page-long-side-stapled':'')
+                                : ('main-result-finished main-result-finished-changed' + (orientation == 'vertical' ? ' main-result-finished-changed-vertical':' main-result-finished-changed-oblong'))+ ( config.doubleFace && orientation =='oblong' && mainTurnPage =='long-side' && page !=1  ? ' adjust-turn-page' : '')"
+                                [innerHTML]="(finished ? finished : '')|safeHtml"></div>
+                            <div *ngIf=" !config.doubleFace || (config.doubleFace && page ==1)" class="turn-page">
+                                <div *ngIf="(mainTurnPage == 'long-side' && orientation == 'vertical') || (mainTurnPage != 'long-side' && orientation == 'oblong') "
+                                    class="turn-page-left">➠</div>
+                                <div *ngIf="(mainTurnPage != 'long-side' && orientation == 'vertical') || (mainTurnPage == 'long-side' && orientation == 'oblong') "
+                                    class="turn-page-top">➠</div>
+                            </div>
+                        </div>
+                        <div *ngIf="config.doubleFace && page != 1 && page != pages"
+                            [className]="'main-result-doubleFace main-result-' + orientation +' main-result-authomatic-' + group$.authomatic + ' main-result-origin-' + focusedFile.authomatic+ ( orientation =='oblong' && mainTurnPage =='long-side' ? ' adjust-turn-page' : '')"
+                            [ngClass]="{'doubleFace-vertical':orientation == 'vertical'}">
+                            <div
+                                [className]="'main-result-container main-result-origin-' + focusedFile.authomatic + ' main-result-container-' + config.perPage + (config.rotation ? ' rotation' : '')">
+                                <div [className]="'thumbnail'"
+                                    *ngFor="let item of finalThumbnails | slice:((page)*config.perPage):(page+1)*config.perPage"
+                                    [ngStyle]="{'opacity': item.hidden ? 0 : 1}">
+                                    <img src="{{item?.url}}" [style.width]="imageWidth"
+                                        [style.transform]="'rotate('+ config.rotation + 'deg)'"
+                                        [ngClass]="{'thumbnailpage-page-color':item?.color}" />
+                                    <!--<span class="pagenumber">{{item?.page}}</span>-->
+                                </div>
+                            </div>
+                            <!--<div class="reverse">reverso</div>-->
+                            <div *ngIf=" !config.doubleFace || (config.doubleFace && mainFinished != 'stapled-creased') || (config.doubleFace && page !=1 && page !=pages && mainFinished != 'stapled-creased')"
+                                class="main-result-finished"
+                                [className]="
+                                (!finishedOrientation || mainFinished =='stapled' || mainFinished =='stapled-creased') 
+                                ? 'main-result-finished' + ( config.doubleFace && focusedFile.authomatic=='oblong' && orientation =='oblong' && mainTurnPage =='short-side' && page !=1  ? ' adjust-turn-page-short-side-anverse' : '')
+                                : ('main-result-finished main-result-finished-changed' + (orientation == 'vertical' ? ' main-result-finished-changed-vertical':' main-result-finished-changed-oblong'))+ ( orientation =='oblong' && mainTurnPage =='long-side' && page !=1  ? mainFinished != 'spiral' ? ' adjust-turn-page-anverse': ' adjust-turn-page-anverse-spiral': '')"
+                                [innerHTML]="(finished ? finished : '')|safeHtml"></div>
+                            <div *ngIf=" config.doubleFace && page !=1" class="turn-page">
+                                <div *ngIf="(mainTurnPage == 'long-side' && orientation == 'vertical') || (mainTurnPage != 'long-side' && orientation == 'oblong') "
+                                    class="turn-page-left">➠</div>
+                                <div *ngIf="(mainTurnPage != 'long-side' && orientation == 'vertical') || (mainTurnPage == 'long-side' && orientation == 'oblong') "
+                                    class="turn-page-top">➠</div>
+                            </div>
+                        </div>
+                        <!--<div *ngIf="slidesPerPage!=1" class="preview">
+                            <div class="thumbnailpage" *ngFor="let item of thumbnailsPartial" id="page{{item?.page}}">
+                                <img src="{{item?.url}}"
+                                    style="width: 115px"><span class="pagenumber">{{item?.page}}</span>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="preview-controls-container">
+                        <div class="decrement-page" (click)="decrementPage()"
+                            [ngClass]="{'decrement-page-disabled':!page || page==1}">
+                            <div class="decrement-page-icon"></div>
+                        </div>
+                        <div class="page-pages">{{ (!config.doubleFace || page == 1 || (config.doubleFace && page ==
+                            pages)) ? page : page + ' - ' + ( page+1)}} / {{pages}} ( {{focusedFile.finalSheets}} )
+                        </div>
+                        <div class="increment-page" (click)="incrementPage()"
+                            [ngClass]="{'increment-page-disabled':!pages || (!config.doubleFace ? page==pages : page==pages || ( page!= 1 && page + 1 >= pages)) }">
+                            <div class="increment-page-icon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="document-group-item-docs-list-change" (click)="changeListView()">
+                    <div class="document-group-item-docs-list-change-icon"></div>
+                </div>
+                <div class="document-group-item-docs-list">
+                    <div class="document-group-item-docs-list-container">
+                        <app-doc-list-canvas [mode]="''" [files]="group$.files" [positions]="positions$"
+                            (callbackDelete)="deleteFromCanvas($event)"></app-doc-list-canvas>
+                        <div>
+                            <!--<app-documents-group-item *ngFor="let file of group$.files; let index = index" [group]="group$"
+                            [data]="file" (callbackFile)="onFile($event)"></app-documents-group-item>-->
+                            <ng-container *ngFor="let dropZone of droppableObjects; let i = index;">
+                                <div [appDroppable]="dropZone" (onDroppableComplete)="onZoneDrop($event)"
+                                    (onDroppableOver)="onZoneOver($event)">
+                                    <ng-container *ngFor="let draggableElement of draggableObjects[i]; let j = index;">
+                                        <div [appDraggable]="draggableElement"
+                                            (onDragStartComplete)="onItemDragStart($event)">
+                                            <app-documents-group-item [group]="group$"
+                                                [data]="draggableElement.data.payload"
+                                                (callbackFile)="onFile($event)"></app-documents-group-item>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="group$.listView" class="document-group-item-docs"
+                [ngClass]="{'document-group-item-docs-edit':group$.listView}">
+                <div *ngIf="group$.files.length" class="document-group-item-docs-list-change"
+                    (click)="changeListView()">
+                    <div class="document-group-item-docs-list-change-icon"></div>
+                </div>
+                <div class="document-group-item-docs-list-edit">
+                    <div class="document-group-item-docs-list-container">
+                        <app-doc-list-canvas [mode]="'edit'" [files]="group$.files" [positions]="positions$"
+                            (callbackDelete)="deleteFromCanvas($event)"></app-doc-list-canvas>
+                        <div>
+                            <!--<app-documents-group-item *ngFor="let file of group$.files; let index = index" [group]="group$"
+                            [data]="file" (callbackFile)="onFile($event)"></app-documents-group-item>-->
+                            <ng-container *ngFor="let dropZone of droppableObjects; let i = index;">
+                                <div [appDroppable]="dropZone" (onDroppableComplete)="onZoneDrop($event)"
+                                    (onDroppableOver)="onZoneOver($event)" class="here">
+                                    <ng-container *ngFor="let draggableElement of draggableObjects[i]; let j = index;">
+                                        <div [appDraggable]="draggableElement"
+                                            (onDragStartComplete)="onItemDragStart($event)">
+                                            <app-documents-group-item [group]="group$"
+                                                [data]="draggableElement.data.payload" [mode]="'edit'"
+                                                (callbackFile)="onFile($event)"></app-documents-group-item>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="document-group-item-footer">
+            <app-documents-group-item-footer [id]="group$.id" [files]="group$.files"
+                [data]="group$.gestor"></app-documents-group-item-footer>
+        </div>
+        <app-file-uploader *ngIf="!group$.files.length" [id]="group$.id"
+            [mode]="'singularDocGroup'"></app-file-uploader>
+        <app-document-group-error [id]="group$.id"></app-document-group-error>
+    </div>
+    <!--<div>
+    <div style="text-align:center">
+        <h1>
+            Drag and Drop
+        </h1>
+        <ng-container *ngFor="let dropZone of droppableObjects; let i = index;">
+            <div [appDroppable]="dropZone" (onDroppableComplete)="onZoneDrop($event)"
+                (onDroppableOver)="onZoneOver($event)">
+                <ng-container *ngFor="let draggableElement of draggableObjects[i]; let j = index;">
+                    <div [appDraggable]="draggableElement" (onDragStartComplete)="onItemDragStart($event)">
+                        <app-documents-group-item [group]="group$" [data]="draggableElement.data.payload"
+                            (callbackFile)="onFile($event)"></app-documents-group-item>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>-->
+    <div class="main-thumbnails" [ngClass]="{'main-result-show':mainVisor}">
+        <div class="main-thumbnails-container" [id]="'divToScroll-'+group$.id">
+            <div class="thumbnailpage" *ngFor="let item of thumbnails" id="page{{item?.page}}-{{group$.id}}"
+                [ngClass]="{'thumbnailpage-deleted':item?.deleted,'thumbnailpage-color':item?.color,'thumbnailpage-focus':item?.focused}">
+                <div class="thumbnailpage-page">{{item?.page}}</div>
+                <img src="{{item?.url}}"
+                    (click)="selectPage(item)" /><!--<span class="pagenumber">{{item?.page}}</span>-->
+                <div class="pageInclude" (click)="selectDelete($event,item)">
+                    <div class="pageInclude-icon"></div>
+                </div>
+                <div *ngIf="!item?.deleted" class="pageColor" (click)="selectColor($event,item)">
+                    <div class="pageColor-icon">{{item?.color ? 'COLOR' : 'B&nbsp;|&nbsp;N'}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-thumbnails-options">
+            <div class="main-options">
+                <div class="main-options-container">
+                    <div class="main-options-container-group">
+                        <div class="main-options-container-group-close-container" (click)="toogleMainVisor($event)">
+                            <div class="main-options-container-group-close-icon"></div>
+                            <!--<div class="document-group-item-header-delete-rot">{{ "GENERIC.DELETE" | translate}}{{" "}} {{ "GENERIC.GROUP" | translate}}</div>-->
+                        </div>
+                    </div>
+                    <div class="main-options-container-group">
+                        <div class="main-options-container-group-select-all" (click)="check('all')"></div>
+                        <div class="main-options-container-group-select-none" (click)="check('none')"></div>
+                    </div>
+                    <!--<div class="main-options-container-group">
+                        <div class="main-options-container-group-color-all" (click)="setColor('all')">COLOR</div>
+                        <div class="main-options-container-group-color-none" (click)="setColor('none')">B | N</div>
+                    </div>-->
+                    <div *ngIf="permissionSvc.setPermission('S0001')" class="main-options-container-group">
+                        <div class="main-options-container-group-perPage"
+                            [ngClass]="{'main-options-container-group-perPage-selected':config.perPage==1}"
+                            (click)="setPerPage(1)">1</div>
+                        <div class="main-options-container-group-perPage"
+                            [ngClass]="{'main-options-container-group-perPage-selected':config.perPage==2}"
+                            (click)="setPerPage(2)">2</div>
+                        <div class="main-options-container-group-perPage"
+                            [ngClass]="{'main-options-container-group-perPage-selected':config.perPage==4}"
+                            (click)="setPerPage(4)">4</div>
+                    </div>
+
+                    <!--<div (click)="setVerticalAlign('top')" style="cursor:pointer">top</div>
+                    <div (click)="setVerticalAlign('middle')" style="cursor:pointer">middle</div>-->
+                    <div *ngIf="permissionSvc.setPermission('S0002')" class="main-options-container-group">
+                        <div class="main-options-container-group-rotate"
+                            [ngClass]="{'disabled':configEnables['rotation']['disable']}"
+                            [style.transform]="'scaleX('+(!config.rotation  ? -1 : 1)+')'" (click)="rotate()">
+                        </div><!--[style.transform]="'scaleX(-1) rotate('+(-config.rotation - 45)+'deg)'"-->
+                    </div>
+
+                    <!--<div class="main-options-container-group">
+                        <div class="main-options-container-group-doubleFace"
+                            [ngClass]="{'main-options-container-group-doubleFace-selected':!config.doubleFace}"
+                            (click)="setDoubleFace()">1 cara</div>
+                        <div class="main-options-container-group-doubleFace"
+                            [ngClass]="{'main-options-container-group-doubleFace-selected':config.doubleFace}"
+                            (click)="setDoubleFace()">doble cara</div>
+                    </div>-->
+
+                    <!--<div class="main-options-container-group">
+                        <div class="main-options-container-group-grouped"
+                            [ngClass]="{'main-options-container-group-grouped-selected':!group$.ungrouped}"
+                            (click)="ungroup()">{{ group$.ungrouped ? 'separados' : 'agrupados'}}</div>
+                    </div>-->
+
+                    <div *ngIf="config.doubleFace && page > 1 && pages > 2 && config.rotation"
+                        class="main-options-container-group">
+                        <div class="main-options-container-group-doubleFace-direction" [ngClass]="{'main-options-container-group-doubleFace-direction-selected':!config.doubleFaceDirection,
+                            'disabled':page==1 || configEnables['doubleFaceDirection']['disable']}"
+                            (click)="setDoubleFaceDirection()">
+                            <div *ngIf="!config.doubleFaceDirection">❱&nbsp;❱</div>
+                            <div *ngIf="config.doubleFaceDirection">❰&nbsp;❱</div>
+                        </div>
+                    </div>
+                    <div class="main-options-container-group">
+                        <div class="main-options-container-group-showBig" (click)="showBig()">
+                            previsualizar
+                        </div>
+                    </div>
+
+                    <!--<div (click)="pageOrder('vertical')" style="cursor:pointer">1,2,3,4</div>
+                    <div (click)="pageOrder('horizontal')" style="cursor:pointer">1,3,2,4</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="testing">
+        <div *ngFor="let item of [].constructor(config.perPage); let i = index"
+            [ngClass]="{'one-slide':config.perPage == 1,'two-slide':config.perPage == 2,'four-slide':config.perPage == 4}">
+            {{i}}
+        </div>
+    </div>-->
+
+</div>

@@ -1,0 +1,44 @@
+//$plugin-assets: "/";
+//$plugin-assets: "/wordpress/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/";
+$plugin-assets: "/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/";
+//backgrounds
+$bg-primary: #cde4f5;
+//colors
+$primary: #105e96;
+$secondary: #105e96;
+$primary-orange:#f08419;
+$secondary-light: #eef8ff;
+$neutral-dark-light: #5c5c5c;
+$neutral-light: #d9d9d9;
+$white-transparent: rgb(255 255 255 / 90%);
+//font colors
+$font-color-primary: #084a79;
+$font-size-primary: 12px;
+$font-size-high: 16px;
+$font-size-responsive: 10px;
+//paddings
+$main-padding: 10px;
+$main-padding-reduce: 4px;
+//margins
+$main-margin: 10px;
+$main-margin-reduce: 4px;
+//borders
+$border-radius-primary: 4px;
+$border-radius-reduce: 4px;
+$border-radius-min: 4px;
+
+// Extra small screen / phone
+$screen-xs-end: 479.98px;
+$screen-xs: 480px;
+// Small screen / tablet
+$screen-sm-end: 767.98px;
+$screen-sm: 768px;
+// Medium screen / desktop
+$screen-md-end: 991.98px;
+$screen-md: 992px;
+// Large screen / wide desktop
+$screen-lg-end: 1199.98px;
+$screen-lg: 1200px;
+
+// size to largest screens
+$screen-xl: 1500px;

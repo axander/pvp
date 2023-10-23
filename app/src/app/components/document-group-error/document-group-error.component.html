@@ -1,0 +1,5 @@
+<div>
+    <div *ngFor="let error of errors; let i = index;" class="error-container"
+    [innerHTML]="error.html|safeHtml">
+    </div>
+</div>

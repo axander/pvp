@@ -1,0 +1,4 @@
+<div>
+    <div *ngFor="let flag of flags$" class="flag" [innerHTML]="(flag | translate)| safeHtml"></div>
+    <div *ngFor="let flag of partialFlags$" class="flag" [innerHTML]="(flag | translate)| safeHtml"></div>
+</div>

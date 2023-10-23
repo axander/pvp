@@ -1,0 +1,15 @@
+<div>
+    <div [className]="gestorHidden ? 'gestor-container-header-hidden' : 'gestor-container-header'">
+        <div *ngIf="closeIcon && closeIcon.active" class="gestor-container-header-closePB" (click)="close($event)" 
+        [innerHTML]="closeIcon!.content!.innerHTML!|safeHtml">
+        </div>
+        <div *ngIf="!closeIcon || (closeIcon && !closeIcon.active)"  class="gestor-container-header-closePB" (click)="close($event)">
+            <!--{{"GENERIC.CLOSE" | translate}}-->
+            <div class="gestor-container-header-closePB-icon" >
+            </div>
+        </div>
+    </div>
+    <div [className]="gestorHidden ? 'gestor-container-config-hidden' : 'gestor-container-config'">
+        <app-gestor-config-item *ngFor="let item of options$" [data]="item" [ngStyle]="{'display':!item['active'] ? 'none' : ''}"></app-gestor-config-item>
+    </div>
+</div>

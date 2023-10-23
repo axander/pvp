@@ -1,0 +1,342 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    position: relative;
+    height: 100%;
+
+    >div {}
+
+    .document-container-group {
+        width: 410px;
+        display: inline-block;
+        transition: width .5s ease;
+
+        &.selected {
+            width: 920px;
+        }
+    }
+
+    .content-container {
+        display: block;
+        position: absolute;
+        overflow: hidden;
+        overflow-y: auto;
+        height: calc(100% - 80px);
+        scroll-behavior: smooth;
+        width: 100%;
+    }
+
+    .documents-container-left {
+        position: relative;
+        margin-left: 350px;
+        transition: margin-left .5s;
+        height: 100vh;
+        position: relative;
+    }
+
+    .documents-container-right {
+        position: relative;
+        margin-right: 350px;
+        transition: margin-right .5s;
+        height: 100vh;
+        position: relative;
+    }
+
+    .documents-container-left-gestor-hidden {
+        position: relative;
+        margin: 0;
+        transition: margin-left .5s;
+        height: 100%;
+        position: relative;
+    }
+
+    .documents-container-right-gestor-hidden {
+        position: relative;
+        margin: 0;
+        transition: margin-right .5s;
+        height: 100%;
+        position: relative;
+    }
+
+    .documents-container-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        padding: $main-padding;
+        border-bottom: 1px dotted;
+
+        .documents-container-header-title {
+            margin-right: auto;
+
+            .documents-container-header-title-logo {
+                width: 30px;
+                height: 30px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: $secondary;
+            }
+        }
+
+        .documents-container-header-tooglePB {
+            display: none;
+            cursor: pointer;
+        }
+
+        .documents-container-header-tooglePB-hidden {
+            display: unset;
+            cursor: pointer;
+            margin-right: 30px;
+
+            .documents-container-header-tooglePB-icon {
+                width: 32px;
+                height: 32px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/settings.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/settings.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: $secondary;
+            }
+
+            &:hover {
+                .documents-container-header-tooglePB-icon {
+                    background: $primary;
+                }
+            }
+        }
+
+
+
+        .documents-container-header-closePB {
+            cursor: pointer;
+            //margin-left: auto;
+            margin-right: 20px;
+
+            .documents-container-header-closePB-icon {
+                width: 22px;
+                height: 22px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: $secondary;
+            }
+
+            &:hover {
+                .documents-container-header-closePB-icon {
+                    background: $primary;
+                }
+            }
+        }
+
+        .documents-container-header-infoPB {
+            cursor: pointer;
+            //margin-left: auto;
+            margin-right: 30px;
+
+            .documents-container-header-infoPB-icon {
+                width: 32px;
+                height: 32px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/info.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/info.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: $secondary;
+            }
+
+            &:hover {
+                .documents-container-header-infoPB-icon {
+                    background: $primary;
+                }
+            }
+        }
+    }
+
+    .documents-container-dropable {
+        width: calc(100% - 20px);
+        height: calc(100% - 80px);
+        position: absolute;
+        opacity: 0.5;
+        left: 0;
+        top: 80px;
+    }
+
+    .documents-groups-container {
+        overflow: hidden;
+        overflow-y: auto;
+        height: calc(100% - 160px);
+        scroll-behavior: smooth;
+    }
+
+    .documents-container-footer {
+        position: absolute;
+        top: 1000000000000000000000;
+        width: calc( 100% - 20px );
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        padding: $main-padding;
+        background: $secondary;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    :host {
+        position: relative;
+        height: 100%;
+
+        .document-container-group {
+            width: 100%;
+            display: unset;
+
+            &.selected {
+                width: 100%;
+            }
+        }
+
+        .documents-container-left {
+            position: relative;
+            margin: 0;
+            transition: margin-left .5s;
+            height: 100%;
+            position: relative;
+        }
+
+        .documents-container-right {
+            position: relative;
+            margin: 0;
+            transition: margin-right .5s;
+            height: 100%;
+            position: relative;
+        }
+
+        .documents-container-left-gestor-hidden {
+            position: relative;
+            margin: 0;
+            transition: margin-left .5s;
+            height: 100%;
+            position: relative;
+        }
+
+        .documents-container-right-gestor-hidden {
+            position: relative;
+            margin: 0;
+            transition: margin-right .5s;
+            height: 100%;
+            position: relative;
+        }
+
+        .documents-container-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            padding: $main-padding;
+            border-bottom: 1px dotted;
+
+            .documents-container-header-title {
+                margin-right: auto;
+            }
+
+            .documents-container-header-tooglePB {
+                display: unset;
+                cursor: pointer;
+                margin-right: unset;
+
+                .documents-container-header-tooglePB-icon {
+                    width: 32px;
+                    height: 32px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/settings.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/settings.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: $secondary;
+                }
+
+                &:hover {
+                    .documents-container-header-tooglePB-icon {
+                        background: $primary;
+                    }
+                }
+            }
+
+
+            .documents-container-header-infoPB {
+                cursor: pointer;
+                //margin-left: auto;
+                margin-right: 10px;
+                margin-left: 30px;
+
+                .documents-container-header-infoPB-icon {
+                    width: 32px;
+                    height: 32px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/info.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/info.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: $secondary;
+                }
+
+                &:hover {
+                    .documents-container-header-infoPB-icon {
+                        background: $primary;
+                    }
+                }
+            }
+
+            .documents-container-header-closePB {
+                cursor: pointer;
+                margin-right: 10px;
+
+                .documents-container-header-closePB-icon {
+                    width: 22px;
+                    height: 22px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: $secondary;
+                }
+
+                &:hover {
+                    .documents-container-header-closePB-icon {
+                        background: $primary;
+                    }
+                }
+            }
+        }
+
+        .documents-groups-container {
+            overflow: hidden;
+            overflow-y: auto;
+            height: calc(100% - 160px);
+            padding: $main-padding;
+            scroll-behavior: smooth;
+        }
+
+        .documents-container-footer {
+            position: absolute;
+            width: 100vw;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            padding: unset;
+            background: $secondary;
+            z-index: 10;
+
+        }
+    }
+}

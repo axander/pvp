@@ -1,0 +1,13 @@
+<div>
+    <div class="info">
+        <!--<div [innerHTML]="ordering_spinner!| safeHtml"></div>-->
+        <div>
+            <div class="info-extra" [innerHTML]="extra!| safeHtml"></div>
+            <div>{{ action | translate }}</div>
+            <div>{{ message | translate }}</div>
+            <div>
+                <app-progress [percentage]="percentage"></app-progress>
+            </div>
+        </div>
+    </div>
+</div>

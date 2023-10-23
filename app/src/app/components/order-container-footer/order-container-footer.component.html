@@ -1,0 +1,45 @@
+<div class="order-footer">
+    <div class="order-footer-size">
+        <div class="order-footer-size-uploaded"></div>
+        <div class="order-footer-size-ammount">{{upload}}</div>
+    </div>
+    <div class="order-footer-pages">
+        <div class="order-footer-pages-container">
+            <div class="order-footer-pages-page"></div>
+            <div class="order-footer-pages-page-number">{{pages}} | {{sheets}}</div>
+        </div>
+        <div class="order-footer-pages-page-rot">{{(pages > 1 || !pages ? "GENERIC.PAGES" : "GENERIC.PAGE")| translate}}
+            | {{(sheets > 1 || !sheets ? "GENERIC.SHEETS" : "GENERIC.SHEETS")| translate}}</div>
+    </div>
+    <div class="order-footer-finished">
+        <div class="order-footer-finished-book-container">
+            <div class="order-footer-finished-book"></div>
+            <div class="order-footer-finished-book-number">{{finishedNumber}}</div>
+        </div>
+        <div class="order-footer-finished-book-rot">{{ (!finishedNumber ? "GENERIC.NONEFINISHES" : finishedNumber ==1 ?
+            "GENERIC.FINISHED" :"GENERIC.FINISHES")| translate}}</div>
+    </div>
+    <div class="order-footer-ammount">
+        <div class="order-footer-ammount-cost">{{"GENERIC.TOTALAMMOUNT"| translate}}</div>
+        <div class="order-footer-ammount-cost-number">{{ammount | number : '1.2-2'}} €</div>
+    </div>
+    <div class="order-footer-add" (click)="showOrderPreview()" [ngClass]="{'disabled': !ammount || errors.length}">
+        <div class="order-footer-add-rot">{{"GENERIC.ADDTOCART"| translate}}</div>
+    </div>
+    <div *ngIf="orderPreview" class="order-footer-preview" [style]="orderPreviewStyle"
+        [ngClass]="{'disabled': !ammount || errors.length,'order-footer-preview-show':orderPreview}">
+        <div class="order-footer-preview-container" [style]="orderResumeStyle">
+            <div class="order-footer-resume">
+                <div class="order-footer-resume-container">
+                    <div class="order-footer-resume-data" [innerHTML]="orderPreviewInnerHTML|safeHtml"></div>
+                </div>
+            </div>
+            <div class="order-footer-add"  (click)="uploadFiles()" [ngClass]="{'disabled': !ammount || errors.length}">
+                <div class="order-footer-add-rot">{{"GENERIC.CONFIRM"| translate}}</div>
+            </div>
+            <div class="order-footer-cancel"  (click)="showOrderPreview()" [ngClass]="{'disabled': !ammount || errors.length}">
+                <div class="order-footer-add-rot">{{"GENERIC.CANCEL"| translate}}</div>
+            </div>
+        </div>
+    </div>
+</div>

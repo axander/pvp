@@ -1,0 +1,113 @@
+@import "../../../assets/styles/variables";
+
+//./wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/clock.svg
+:host {
+    .gestor-config-item-selector {
+        display: inline-flex;
+        justify-content: center;
+        padding: $main-padding-reduce 0 $main-padding-reduce 0;
+        cursor: pointer;
+        border-radius: $border-radius-primary;
+        vertical-align: top;
+        position: relative;
+        .deco{
+            position: absolute;
+            right: 0;
+            width: 0;
+            height: 0;
+            background: yellow;
+        }
+        .gestor-config-item-selector-container {
+            border-radius: $border-radius-min;
+            margin: 0 $main-margin-reduce 0 $main-margin-reduce;
+            padding: $main-padding;
+            width: 100%;
+            border: 1px dashed transparent;
+            box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);
+            background: white;
+            transition: background .5s ease;
+            .gestor-config-item-selector-icon {
+                width: 20px;
+                height: 20px;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                -webkit-mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: $primary;
+            }
+
+            .gestor-config-item-selector-text {
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                text-align: center;
+                word-break: break-word;
+            }
+
+            .gestor-config-item-selector-description {
+                font-size: 0.52rem;
+                font-weight: 400;
+                text-align: center;
+                word-break: break-word;
+            }
+        }
+
+        &.gestor-config-item-selector-container-disable {
+            pointer-events:none;
+            opacity: .3;
+           
+        }
+
+        &.gestor-config-item-selector-container-selected {
+            .gestor-config-item-selector-container {
+                background: $secondary;
+                color: white;
+                border-radius: $border-radius-min;
+                padding: $main-padding;
+                width: 100%;
+                border: 1px dashed $secondary;
+                box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);
+
+                .gestor-config-item-selector-icon {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    -webkit-mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white !important;
+                }
+            }
+        }
+
+        &:hover {
+
+            .gestor-config-item-selector-container {
+                background: $secondary;
+                border: 1px dashed $secondary;
+                color: white;
+                border-radius: $border-radius-min;
+                padding: $main-padding;
+                width: 100%;
+                box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);
+
+                .gestor-config-item-selector-icon {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    -webkit-mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white !important;
+                }
+            }
+        }
+    }
+
+}

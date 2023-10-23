@@ -1,0 +1,28 @@
+<div *ngIf="data$.type!='uploader'" [ngStyle]="data$.style" class="gestor-config-item-container"
+    [ngClass]="{'gestor-config-item-container-hor':data$.orientation == 'horizontal'}">
+    <div class="gestor-config-item-rot">
+        <div class="gestor-config-item-text" [ngStyle]="data$.rot ? data$.rot.style : {}">
+            {{(data$.rot ? data$.rot.text : '')| translate}}
+            <div class="gestor-config-item-description" [ngStyle]="(data$.rot && data$.rot['description'] ) ? data$.rot['description'].style : ''">{{((data$.rot && data$.rot['description'] ) ? data$.rot['description'].text : '') | translate}}</div>
+        </div>
+        <div *ngIf="data$.info && data$.info['visible']" class="gestor-config-item-info" (click)="showInfo(data$.info)"></div>
+    </div>
+    <div *ngIf="data$.type != 'counter' && data$.type != 'textarea'" class="gestor-config-item-options-container">
+        <app-gestor-config-item-selector *ngFor="let item of data$.options" [data]="item" [perRow]="data$['perRow']"
+            (click)="select(item)"></app-gestor-config-item-selector>
+    </div>
+    <div *ngIf="data$.type == 'counter'" class="gestor-config-item-options-container">
+        <app-counter [data]="data$"></app-counter>
+    </div>
+    <div *ngIf="data$.type == 'textarea'" class="gestor-config-item-options-container">
+        <app-textarea [data]="data$"></app-textarea>
+    </div>
+</div>
+<div *ngIf="data$.type == 'uploader'" [ngStyle]="data$.style" class="gestor-config-item-container">
+    <app-file-uploader [mode]="'addGroup'"></app-file-uploader>
+</div>
+<div class="info" [ngClass]="{'modal-cpdo-open':visibleInfo,'modal-cpdo-close':!visibleInfo}" (click)="toogleInfo()"
+    [style]="visibleInfo ? infoStyleOpen : infoStyle">
+    <div class="modal-cpdo" [innerHTML]="contentInfo| safeHtml"
+        [style]="visibleInfo ? modalStyleOpen ? modalStyleOpen : '' : modalStyle"></div>
+</div>

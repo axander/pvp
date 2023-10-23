@@ -1,0 +1,16 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    .textarea-container {
+        display: flex;
+        >textarea {
+            width: 100%;
+            padding: $main-padding;
+            padding: $main-padding;
+            border-radius: $border-radius-reduce;
+            margin: $main-margin;
+            background: $secondary-light;
+            border: 1px solid $secondary;
+        }
+    }
+}

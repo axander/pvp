@@ -1,0 +1,818 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+    .uploader {
+        background: white;
+        border-radius: $border-radius-primary;
+        padding: $main-padding;
+        padding-bottom: 30px;
+        -webkit-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+        -moz-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+        box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+        border: 4px dashed $secondary;
+        >div {
+            text-align: center;
+        }
+
+        .accessPB {
+            cursor: pointer;
+        }
+
+        .upload-icon-filled {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: $secondary;
+            cursor: pointer;
+            margin-bottom: 30px;
+
+            &:hover {
+                background: $primary;
+            }
+
+            .input-file-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                cursor: pointer;
+
+                input[type="file"] {
+                    display: none;
+                }
+            }
+
+            .upload-icon-filled-svg {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+        }
+
+        .logo {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/image.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: $secondary;
+            }
+        }
+
+        .header1 {
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+
+        .header1 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .uploader_hover {
+        background: $bg-primary;
+
+
+    }
+
+    .uploader-empty-gestor {
+        width: 90%;
+        background: white;
+        border-radius: $border-radius-primary;
+        padding: $main-padding;
+        -webkit-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+        -moz-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+        box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+        border: 2px dashed $secondary;
+        margin: 15px auto;
+        height: calc(100% - 60px);
+        display: table;
+
+        >div {
+            text-align: center;
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+
+        .accessPB {
+            cursor: pointer;
+        }
+
+        .upload-icon-filled {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto 40px auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: $secondary;
+            cursor: pointer;
+
+            &:hover {
+                background: $primary;
+            }
+
+            .input-file-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                cursor: pointer;
+
+                input[type="file"] {
+                    display: none;
+                }
+            }
+
+            .upload-icon-filled-svg {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+        }
+
+        .header1 {
+            font-size: 16px;
+        }
+
+    }
+
+    .uploader-empty-gestor_hover {
+        background: $bg-primary;
+
+
+    }
+
+    .uploader-min {
+        position: relative;
+        background: white;
+        border-radius: 4px;
+        border: 4px dashed $primary-orange;
+        box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);
+        >div {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            padding: $main-padding;
+            //background:$secondary-light;
+        }
+
+        .accessPB {
+            cursor: pointer;
+        }
+
+        .upload-icon-filled {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: auto;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: $primary-orange;
+            cursor: pointer;
+
+            &:hover {
+                background: $primary;
+            }
+
+            .upload-icon-filled-svg {
+                width: 20px;
+                height: 20px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+        }
+
+        .input-file-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            cursor: pointer;
+
+            input[type="file"] {
+                display: none;
+            }
+        }
+
+        .uploader-min-container-text {
+            .uploader-min-text1 {
+                font-size: 16px;
+            }
+
+            .uploader-min-text2 {
+                font-size: 12px;
+            }
+        }
+
+    }
+
+    .uploader-min_hover {
+        background: $bg-primary;
+
+
+    }
+
+    .uploader-singular {
+        >div {
+            position: relative;
+        }
+
+        .accessPB {
+            cursor: pointer;
+        }
+
+        .upload-icon-filled {
+
+            cursor: pointer;
+
+            .input-file-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                cursor: pointer;
+
+                input[type="file"] {
+                    display: none;
+                }
+            }
+
+            .upload-icon-filled-svg {
+                width: 24px;
+                height: 24px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+
+                &:hover {
+                    background: $primary
+                }
+            }
+        }
+
+        .header1 {
+            font-size: 16px;
+        }
+    }
+
+    .uploader-singular_hover {
+        .dropable_div {
+            .upload-icon-filled {
+                .upload-icon-filled-svg {
+                    background: $bg-primary;
+                }
+            }
+        }
+    }
+
+    .uploader-singular-group {
+       /* position: absolute;
+        bottom: 60px;
+        left: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;*/
+
+
+        position: absolute;
+        z-index: 999999;
+        /* bottom: 90px; */
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-50%) translateY(-25%);
+        height: 40%;
+        width: 100%;
+    
+
+        >div {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px;
+            border-radius: $border-radius-primary;
+            border: 1px dashed  $secondary;
+            overflow: hidden;
+        }
+
+
+        .accessPB {
+            cursor: pointer;
+        }
+
+        .upload-icon-filled {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto 40px auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: $secondary;
+            cursor: pointer;
+
+            &:hover {
+                background: $primary;
+            }
+
+            .input-file-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                cursor: pointer;
+
+                input[type="file"] {
+                    display: none;
+                }
+            }
+
+            .upload-icon-filled-svg {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                background: white;
+            }
+        }
+
+        .header1 {
+            font-size: 16px;
+        }
+
+    }
+
+    .uploader-singular-group_hover {
+        >div {
+            background: $bg-primary;
+        }
+
+    }
+
+}
+@media (max-width: $screen-sm) {
+    :host {
+        .uploader {
+    
+            background: white;
+            border-radius: $border-radius-primary;
+            padding: $main-padding;
+            padding-bottom: 30px;
+            -webkit-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+            -moz-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+            box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+            border: 4px dashed $secondary;
+    
+            >div {
+                text-align: center;
+            }
+    
+            .accessPB {
+                cursor: pointer;
+            }
+    
+            .upload-icon-filled {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: $secondary;
+                cursor: pointer;
+                margin-bottom: 30px;
+    
+                &:hover {
+                    background: $primary;
+                }
+    
+                .input-file-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    cursor: pointer;
+    
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+    
+                .upload-icon-filled-svg {
+                    width: 60px;
+                    height: 60px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white;
+                }
+            }
+    
+            .logo {
+                margin-top: 30px;
+                margin-bottom: 30px;
+                position: relative;
+                width: 100%;
+                text-align: center;
+                .logo-icon {
+                    width: auto;
+                    height: 60px;
+                    margin: 0 auto;
+                    /*-webkit-mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background:  $secondary;*/
+                    background: url("https://digicopy.com.es/wp-content/uploads/2020/02/logo-digicopy-ok-300x113.png") no-repeat center;
+                    background-size: contain;
+                }
+            }
+    
+            .header1 {
+                font-size: 25px;
+                margin-bottom: 30px;
+            }
+    
+            .header1 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+        }
+    
+        .uploader_hover {
+            background: $bg-primary;
+    
+    
+        }
+    
+        .uploader-empty-gestor {
+            width: 90%;
+            background: white;
+            border-radius: $border-radius-primary;
+            padding: $main-padding;
+            -webkit-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+            -moz-box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+            box-shadow: 0px 0px 11px 0px rgba(8, 74, 121, 0.35);
+            border: 2px dashed $secondary;
+            margin: 15px auto;
+            height: calc(100% - 60px);
+            display: table;
+    
+            >div {
+                text-align: center;
+                height: 100%;
+                display: table-cell;
+                vertical-align: middle;
+            }
+    
+    
+            .accessPB {
+                cursor: pointer;
+            }
+    
+            .upload-icon-filled {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 40px auto 40px auto;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: $secondary;
+                cursor: pointer;
+    
+                &:hover {
+                    background: $primary;
+                }
+    
+                .input-file-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    cursor: pointer;
+    
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+    
+                .upload-icon-filled-svg {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white;
+                }
+            }
+    
+            .header1 {
+                font-size: 16px;
+            }
+    
+        }
+    
+        .uploader-empty-gestor_hover {
+            background: $bg-primary;
+    
+    
+        }
+    
+        .uploader-min {
+            position: relative;
+            background: white;
+            border-radius: 24px;
+            border: 4px dashed $primary-orange;
+            box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);
+            >div {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                padding: $main-padding;
+                //background:$secondary-light;
+            }
+    
+            .accessPB {
+                cursor: pointer;
+            }
+    
+            .upload-icon-filled {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: auto;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: $primary-orange;
+                cursor: pointer;
+    
+                &:hover {
+                    background: $primary;
+                }
+    
+                .upload-icon-filled-svg {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white;
+                }
+            }
+    
+            .input-file-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                cursor: pointer;
+    
+                input[type="file"] {
+                    display: none;
+                }
+            }
+    
+            .uploader-min-container-text {
+                .uploader-min-text1 {
+                    font-size: 16px;
+                }
+    
+                .uploader-min-text2 {
+                    font-size: 12px;
+                }
+            }
+    
+        }
+    
+        .uploader-min_hover {
+            background: $bg-primary;
+    
+    
+        }
+    
+        .uploader-singular {
+            >div {
+                position: relative;
+            }
+    
+            .accessPB {
+                cursor: pointer;
+            }
+    
+            .upload-icon-filled {
+    
+                cursor: pointer;
+    
+                .input-file-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    cursor: pointer;
+    
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+    
+                .upload-icon-filled-svg {
+                    width: 24px;
+                    height: 24px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white;
+    
+                    &:hover {
+                        background: $primary
+                    }
+                }
+            }
+    
+            .header1 {
+                font-size: 16px;
+            }
+        }
+    
+        .uploader-singular_hover {
+            .dropable_div {
+                .upload-icon-filled {
+                    .upload-icon-filled-svg {
+                        background: $bg-primary;
+                    }
+                }
+            }
+        }
+    
+        .uploader-singular-group {
+           /* position: absolute;
+            bottom: 60px;
+            left: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;*/
+    
+    
+            position: absolute;
+            z-index: 999999;
+            /* bottom: 90px; */
+            top: 50%;
+            left: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-50%) translateY(-35%);
+            height: 40%;
+            width: 100%;
+    
+            >div {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+                padding: 10px;
+                border-radius: $border-radius-primary;
+                border: 1px dashed  $secondary;
+                overflow: hidden;
+            }
+    
+    
+            .accessPB {
+                cursor: pointer;
+            }
+    
+            .upload-icon-filled {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 40px auto 40px auto;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: $secondary;
+                cursor: pointer;
+    
+                &:hover {
+                    background: $primary;
+                }
+    
+                .input-file-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    cursor: pointer;
+    
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+    
+                .upload-icon-filled-svg {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 auto;
+                    -webkit-mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/upload-icon.svg") no-repeat 0 0;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+                    background: white;
+                }
+            }
+    
+            .header1 {
+                font-size: 16px;
+            }
+    
+        }
+    
+        .uploader-singular-group_hover {
+            >div {
+                background: $bg-primary;
+            }
+    
+        }
+    
+    }
+}

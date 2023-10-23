@@ -1,0 +1,24 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    >div {
+        overflow: hidden;
+        overflow-y: auto;
+        height: 60px;
+    }
+
+    .flag {
+        display: inline-block;
+        border-radius: $border-radius-primary;
+        border: 1px solid $secondary;
+        padding: $main-padding-reduce;
+        margin: $main-margin-reduce;
+        overflow: hidden;
+        height: 10px;
+        span {
+            padding-left: $main-padding-reduce;
+            padding-right: $main-padding-reduce;
+            font-size: 10px;
+        }
+    }
+}

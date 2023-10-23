@@ -1,0 +1,24 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    .progress {
+        width: 300px;
+        height: 20px;
+        position: relative;
+        margin: auto;
+        background-color: $secondary-light;
+        border-radius: $border-radius-primary;
+        overflow: hidden;
+        margin-top: $main-margin;
+        border: 1px dashed $secondary;
+        .progress_bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 40px;
+            background-color: $secondary;
+            transition: width .5s;
+        }
+    }
+}

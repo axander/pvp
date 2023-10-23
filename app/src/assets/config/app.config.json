@@ -1,0 +1,1726 @@
+{
+  "version": "1.0.0.1",
+  "active": true,
+  "visible_responsive": false,
+  "ordering_spinner": "<div style=\"position: relative;\"><div style=\"padding: 10px;background: white;font-size: 16px;\">ordering...</div></div>",
+  "ordering_action": "<div style=\"position: relative;\"><div style=\"padding: 10px;background: white;font-size: 16px;\">ordering...</div></div>",
+  "ordering_message": "<div style=\"position: relative;\"><div style=\"padding: 10px;background: white;font-size: 16px;\">ordering...</div></div>",
+  "ordering_extra": {
+    "collection": [
+      {
+        "id": "files",
+        "selected": false,
+        "code": "<div style=\"position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;\"><div style=\"padding: 10px;background: white;font-size: 16px;\">disclaimer 1...</div></div>"
+      },
+      {
+        "id": "redirecting",
+        "selected": false,
+        "code": "<div style=\"position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;\"><div style=\"padding: 10px;background: white;font-size: 16px;\">disclaimer 3...</div></div>"
+      },
+      {
+        "id": "addToCart",
+        "selected": false,
+        "code": "<div style=\"position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;\"><div style=\"padding: 10px;background: white;font-size: 16px;\">disclaimer 2...</div></div>"
+      }
+    ],
+    "description": "mensaje que se muestra en los tres pasos de creación del pedido"
+  },
+  "addToCartId": 15887,
+  "gestor": {
+    "options": [
+      {
+        "type": "uploader",
+        "rot": {
+          "text": "GESTOR.ITEMS.ADDDOC.TITLE",
+          "style": {
+            "font-size": "16px",
+            "text-transform": "uppercase"
+          }
+        },
+        "style": {
+          "background": "#eef8ff"
+        },
+        "options": [],
+        "active": true,
+        "id": "uploader",
+        "description": "elemento de subida de nuevos grupos de documentos"
+      },
+      {
+        "type": "counter",
+        "rot": {
+          "text": "GESTOR.ITEMS.COPIESNUMBER.TITLE",
+          "style": {
+            "font-size": ".75rem",
+            "text-transform": "uppercase",
+            "font-weight": "500"
+          }
+        },
+        "orientation": "horizontal",
+        "options": [],
+        "value": 1,
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Indica el número de copias que deseas de todos los archivos del grupo</div></div>"
+        },
+        "active": "true",
+        "id": "copies",
+        "description": "elemento de numero de copias del grupo de documentos"
+      },
+      {
+        "rot": {
+          "text": "GESTOR.ITEMS.COLOR.TITLE",
+          "style": {}
+        },
+        "perRow": 2,
+        "options": [
+          {
+            "rot": {
+              "text": "<div style='filter:grayscale(1);background:url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/color-wheel.svg) no-repeat 0 0;width:40px;height:40px'></div>",
+              "style": {
+                "width": "50px",
+                "margin": "auto",
+                "height": "40px"
+              },
+              "description": {
+                "text": ""
+              },
+              "property-value": "Blanco y negro"
+            },
+            "icon": {
+              "style": {
+                "-webkit-mask": "url('https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/icon-ui-document-pdf.svg') no-repeat 0 0",
+                "mask": "url('https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/icon-ui-document-pdf.svg') no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "mask-size": "cover",
+                "display": "none"
+              }
+            },
+            "className": "test",
+            "selected": true,
+            "perPage": false,
+            "unique": true,
+            "cost": 0,
+            "active": true,
+            "id": "b/w",
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "flag": {
+              "content": "B/N"
+            },
+            "related": {
+              "id": "finished"
+            }
+          },
+          {
+            "rot": {
+              "text": "<div style='background:url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/color-wheel.svg) no-repeat 0 0;width:40px;height:40px'></div>",
+              "style": {
+                "font-size": ".75rem",
+                "text-transform": "uppercase",
+                "font-weight": "500",
+                "width": "50px",
+                "margin": "auto",
+                "display": "flex",
+                "align-items": "center",
+                "height": "40px"
+              },
+              "description": {
+                "text": "",
+                "style": {
+                  "font-size": ".52rem",
+                  "font-weight": "400",
+                  "text-align": "center"
+                }
+              },
+              "property-value": "color"
+            },
+            "selected": false,
+            "perPage": false,
+            "unique": true,
+            "cost": ".7",
+            "active": true,
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            },
+            "id": "color",
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "flag": {
+              "content": "color"
+            },
+            "related": {
+              "id": "finished",
+              "options": [
+                {
+                  "id": "none"
+                },
+                {
+                  "id": "stapled"
+                },
+                {
+                  "id": "stapled-creased"
+                },
+                {
+                  "id": "spiral"
+                }
+              ]
+            },
+            "message": {
+              "active": true,
+              "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>El acabado <strong>\"perforado\"</strong> no está disponible para impresiones a color.</div></div>"
+            }
+          }
+        ],
+        "active": true,
+        "id": "color",
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Selecciona si deseas imprimir todos los archivos del grupo en blanco y negro o en color.</br>Si alguna página deseas que se imprima en otro color puedes hacerlo seleccionando el documento en el grupo y pulsando el icono tuerca.</div></div>"
+        },
+        "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>"
+      },
+      {
+        "rot": {
+          "text": "GESTOR.ITEMS.ORIENTATION.TITLE",
+          "style": {}
+        },
+        "perRow": 2,
+        "options": [
+          {
+            "rot": {
+              "text": "automático",
+              "style": {
+                "padding": "26px 0 26px 0"
+              }
+            },
+            "selected": true,
+            "id": "authomatic",
+            "active": true,
+            "icon": {
+              "style": {
+                "display": "none",
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/1face.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "30px",
+                "height": "42px",
+                "background": "#105e96"
+              }
+            },
+            "message": {
+              "active": true,
+              "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>El modo automático dispondrá todos los documentos en la dirección original marcada por el primer documento del grupo</div></div>"
+            },
+            "related-extra": [
+              {
+                "id": "turn-page",
+                "options": []
+              }
+            ]
+          },
+          {
+            "rot": {
+              "text": "GESTOR.ITEMS.ORIENTATION.OPTIONS.OPTION1.TITLE",
+              "style": {}
+            },
+            "selected": false,
+            "id": "vertical",
+            "active": true,
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/1face.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "30px",
+                "height": "42px",
+                "background": "#105e96"
+              }
+            },
+            "related-extra": [
+              {
+                "id": "turn-page",
+                "options": []
+              }
+            ]
+          },
+          {
+            "rot": {
+              "text": "GESTOR.ITEMS.ORIENTATION.OPTIONS.OPTION2.TITLE",
+              "style": {
+                "margin-top": "15px"
+              }
+            },
+            "id": "oblong",
+            "active": true,
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/oblong.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "56px",
+                "height": "36px",
+                "background": "#105e96"
+              }
+            },
+            "related-extra": [
+              {
+                "id": "turn-page",
+                "options": []
+              }
+            ]
+          }
+        ],
+        "active": true,
+        "id": "orientation"
+      },
+      {
+        "rot": {
+          "text": "GESTOR.ITEMS.FACES.TITLE",
+          "style": {}
+        },
+        "perRow": 2,
+        "options": [
+          {
+            "rot": {
+              "text": "una cara",
+              "style": {}
+            },
+            "selected": true,
+            "id": "one_face",
+            "active": true,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/1face.svg) no-repeat 0 0",
+                "width": "30px",
+                "height": "42px",
+                "background": "#105e96",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "related": {
+              "id": "gramaje"
+            },
+            "related-extra": [
+              {
+                "id": "rotate"
+              }
+            ]
+          },
+          {
+            "rot": {
+              "text": "dos caras",
+              "style": {}
+            },
+            "id": "two_faces",
+            "active": true,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/2faces.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "63px",
+                "height": "42px",
+                "background": "#105e96"
+              }
+            },
+            "message": {
+              "active": true,
+              "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>El tipo de papel <strong>\"adhesivo\"</strong> no es posible para impresiones a doble cara.</div></div>"
+            },
+            "deco": {
+              "active": true,
+              "content": "<div style='position: absolute;top: -10px;left: -50px;width: 40px;height: 20px;background: #f08419;display: flex;justify-content: center;color: white;align-items: center;border-radius: 4px;'>new</div>"
+            },
+            "related": {
+              "id": "gramaje",
+              "options": [
+                {
+                  "id": "gramaje-80gr"
+                },
+                {
+                  "id": "gramaje-100gr"
+                },
+                {
+                  "id": "gramaje-160gr"
+                },
+                {
+                  "id": "gramaje-250gr"
+                },
+                {
+                  "id": "gramaje-350gr"
+                }
+              ]
+            },
+            "related-extra": [
+              {
+                "id": "rotate"
+              }
+            ]
+          }
+        ],
+        "active": true,
+        "id": "faces",
+        "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Indica si quieres que todos los documentos del grupo estén impresos por una o por las dos caras.</div></div>"
+        }
+      },
+      {
+        "id": "turn-page",
+        "rot": {
+          "text": "giro de página"
+        },
+        "perRow": 2,
+        "options": [
+          {
+            "id": "long-side",
+            "active": true,
+            "rot": {
+              "text": "lado largo"
+            },
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/long-side.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "90px",
+                "height": "50px",
+                "background": "#105e96"
+              }
+            },
+            "related": {
+              "id": "perforation"
+            },
+            "selected": true
+          },
+          {
+            "id": "short-side",
+            "active": true,
+            "rot": {
+              "text": "lado corto"
+            },
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/short-side.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "90px",
+                "height": "50px",
+                "background": "#105e96"
+              }
+            },
+            "related": {
+              "id": "perforation",
+              "options": [
+                {
+                  "id": "2-perforations"
+                }
+              ]
+            }
+          }
+        ],
+        "active": true,
+        "info": {
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Cuando selecciones imprimir a dos caras, elige si quieres que el giro de página sea por el lado corto o por el lado largo de la hoja.</br>La flecha indicada en el archivo muestra visualmente el modo de giro.</div></div>",
+          "visible": true
+        }
+      },
+      {
+        "id": "rotate",
+        "rot": {
+          "text": "girar"
+        },
+        "active": false,
+        "perRow": 2,
+        "options": [
+          {
+            "rot": {
+              "text": "sin giro",
+              "style": {
+                "padding": "15px 0 15px 0"
+              }
+            },
+            "selected": true,
+            "id": "0",
+            "active": true,
+            "value": 1,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "display": "none",
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/spinner11.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "background": "#105e96",
+                "width": "20px",
+                "height": "20px"
+              }
+            }
+          },
+          {
+            "rot": {
+              "text": "girado",
+              "style": {}
+            },
+            "id": "90",
+            "active": true,
+            "value": 2,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/spinner11.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "20px",
+                "height": "20px",
+                "background": "#105e96"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rot": {
+          "text": "GESTOR.ITEMS.MULTIPLEPAGES.TITLE",
+          "style": {}
+        },
+        "perRow": 2,
+        "options": [
+          {
+            "rot": {
+              "text": "1 por cara",
+              "style": {}
+            },
+            "selected": true,
+            "id": "1_per_page",
+            "active": true,
+            "value": 1,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/1slide.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "background": "#105e96",
+                "width": "20px",
+                "height": "20px"
+              }
+            }
+          },
+          {
+            "rot": {
+              "text": "2 por cara",
+              "style": {}
+            },
+            "id": "2_per_page",
+            "active": true,
+            "value": 2,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/2slides.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "width": "47px",
+                "height": "20px",
+                "background": "#105e96"
+              }
+            }
+          },
+          {
+            "id": "4_per_page",
+            "active": true,
+            "rot": {
+              "text": "4 por cara"
+            },
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/4slides.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "20px",
+                "height": "20px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "value": 4,
+            "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>"
+          }
+        ],
+        "active": true,
+        "id": "slide_per_page",
+        "description": "este identificador es usado por la lógica de la interfaz, <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Elige el número de paginas que quieres que haya en cada hoja.</br>En el grupo puedes visualizar como se imprimirá.</div></div>"
+        }
+      },
+      {
+        "rot": {
+          "text": "tamaño del papel",
+          "style": {}
+        },
+        "perRow": 3,
+        "options": [
+          {
+            "rot": {
+              "text": "A3",
+              "style": {
+                "height": "40px",
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center"
+              },
+              "description": {
+                "text": "420mm x 297mm",
+                "style": ""
+              }
+            },
+            "active": true,
+            "id": "A3",
+            "perPage": true,
+            "unique": false,
+            "cost": 0.1,
+            "icon": {
+              "style": {
+                "background": "#084a79",
+                "mask": "url(https://digicopy.com.es/wp-content/uploads/2023/08/UPLOAD_DIR64e36b90700e5.svg) no-repeat 0 0",
+                "width": "20px",
+                "height": "30px",
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/uploads/2023/08/UPLOAD_DIR64e36b90700e5.svg) no-repeat 0 0",
+                "-webkit-mask-size": "cover",
+                "display": "none"
+              }
+            }
+          },
+          {
+            "rot": {
+              "text": "A4",
+              "style": {
+                "height": "40px",
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center"
+              },
+              "active": true,
+              "description": {
+                "text": "297mm x 210mm"
+              }
+            },
+            "selected": true,
+            "active": true,
+            "id": "A4",
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          },
+          {
+            "rot": {
+              "text": "A5",
+              "style": {
+                "height": "40px",
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center"
+              },
+              "description": {
+                "text": "210mm x 148mm",
+                "style": ""
+              }
+            },
+            "id": "A5",
+            "active": true,
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          }
+        ],
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Selecciona el formato de papel que deseas y a continuación el gramaje.</br>El tipo de papel <strong>\"ADHESIVO\"</strong> sólo se puede seleccionar para impresiones a una cara.</div></div>"
+        },
+        "active": true,
+        "id": "paper-type"
+      },
+      {
+        "rot": {
+          "text": "gramaje del papel"
+        },
+        "id": "gramaje",
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Selecciona el gramaje de papel que desees.</br>El adhesivo sólo es seleccionable en impresiones a una cara.</div></div>"
+        },
+        "active": true,
+        "options": [
+          {
+            "active": true,
+            "rot": {
+              "text": "80GR"
+            },
+            "id": "gramaje-80gr",
+            "selected": true,
+            "perPage": true,
+            "unique": false,
+            "cost": 0,
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          },
+          {
+            "active": true,
+            "id": "gramaje-100gr",
+            "rot": {
+              "text": "100gr"
+            },
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          },
+          {
+            "active": true,
+            "id": "gramaje-160gr",
+            "rot": {
+              "text": "160gr"
+            },
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          },
+          {
+            "active": true,
+            "id": "gramaje-250gr",
+            "rot": {
+              "text": "250gr"
+            },
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          },
+          {
+            "active": true,
+            "id": "gramaje-350gr",
+            "rot": {
+              "text": "350gr"
+            },
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          },
+          {
+            "id": "adhesivo",
+            "rot": {
+              "text": "adhesivo",
+              "style": {
+                "height": "20px",
+                "display": "flex",
+                "align-items": "center",
+                "justify-content": "center"
+              }
+            },
+            "active": true,
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            }
+          }
+        ],
+        "perRow": 3
+      },
+      {
+        "type": "FINISHED",
+        "rot": {
+          "text": "GESTOR.ITEMS.FINISHED.TITLE",
+          "style": {}
+        },
+        "perRow": 3,
+        "options": [
+          {
+            "id": "none",
+            "rot": {
+              "text": "sin acabado",
+              "style": {
+                "margin": "20px 0 20px 0"
+              }
+            },
+            "active": true,
+            "selected": true,
+            "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "display": "none"
+              }
+            },
+            "related": {
+              "id": "grouping",
+              "options": []
+            },
+            "related-extra": [
+              {
+                "id": "turn-page",
+                "options": []
+              }
+            ]
+          },
+          {
+            "rot": {
+              "text": "GESTOR.ITEMS.FINISHED.OPTIONS.OPTION2.TITLE",
+              "style": {
+                "margin": "20px 0px 0px"
+              }
+            },
+            "perPage": false,
+            "unique": true,
+            "cost": 0.03,
+            "id": "stapled",
+            "active": true,
+            "selected": false,
+            "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/stapled.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "30px",
+                "height": "42px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "innerHTML": {
+              "visible": true,
+              "content": "<div style='-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/spiral-finish.svg) 0 repeat-y;-webkit-mask-size: cover;width: 25px;height: 6px;margin-top: 8px;margin-left: 15px;background: #f08419;'></div>"
+            },
+            "related": {
+              "id": "grouping",
+              "options": [
+                {
+                  "id": "grouped"
+                },
+                {
+                  "id": "ungrouped"
+                }
+              ]
+            }
+          },
+          {
+            "id": "stapled-creased",
+            "active": true,
+            "rot": {
+              "text": "plegado y grapado en medio",
+              "style": {
+                "font-size": "10px",
+                "line-height": "10px"
+              }
+            },
+            "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/stapled-creased.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "63px",
+                "height": "42px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "cost": 0.2,
+            "related": {
+              "id": "grouping",
+              "options": [
+                {
+                  "id": "grouped"
+                },
+                {
+                  "id": "ungrouped"
+                }
+              ]
+            },
+            "innerHTML": {
+              "visible": true,
+              "content": "<div style='position: relative;left: 53px;height: 100%;width: 10px;padding-left: 117px;'><div style='position: relative;display:flex;align-items:center;height:50%'><div style='width: 5px;height: 20px;background: #f08419;box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);'></div></div><div style='position: relative;display:flex;align-items:center;height:50%'><div style='width: 5px;height: 20px;background: #f08419;box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);'></div></div></div>"
+            }
+          },
+          {
+            "id": "perforated",
+            "active": true,
+            "perPage": false,
+            "unique": true,
+            "cost": 0,
+            "rot": {
+              "text": "perforado"
+            },
+            "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/perforated2.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "29px",
+                "height": "41px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "message": {
+              "active": true,
+              "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>A continuación podrás seleccionar si deseas dos perforaciones o 4.</div></div>"
+            },
+            "related": {
+              "id": "grouping",
+              "options": []
+            },
+            "related-section": "perforation",
+            "related-section-finished": "perforation",
+            "related-extra": [
+              {
+                "id": "turn-page",
+                "options": []
+              }
+            ]
+          },
+          {
+            "rot": {
+              "text": "espiral",
+              "style": {}
+            },
+            "perPage": false,
+            "unique": true,
+            "cost": 0,
+            "id": "spiral",
+            "active": true,
+            "description": "<span style=\"color:#f08419\">no cambiar!!!!!!!!!!!!</span>",
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/spiral.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "33px",
+                "height": "42px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "innerHTML": {
+              "visible": true,
+              "content": "<div style='-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/spiral-finish.svg) 0 repeat-y;-webkit-mask-size: cover;width: 55%;height: calc( 100% - 16px );margin-top: 8px;background: black;'></div>"
+            },
+            "related": {
+              "id": "grouping",
+              "options": [
+                {
+                  "id": "grouped"
+                },
+                {
+                  "id": "ungrouped"
+                }
+              ]
+            },
+            "related-extra": [
+              {
+                "id": "finished-position",
+                "options": []
+              },
+              {
+                "id": "turn-page",
+                "options": []
+              }
+            ]
+          }
+        ],
+        "active": true,
+        "id": "finished",
+        "description": "no tocar el nombre pues es referencia de regla <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>"
+      },
+      {
+        "id": "perforation",
+        "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+        "active": false,
+        "perRow": 2,
+        "rot": {
+          "text": "perforaciones",
+          "style": {}
+        },
+        "options": [
+          {
+            "id": "2-perforations",
+            "active": true,
+            "description": "2 agujeros <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "rot": {
+              "text": "2 agujeros"
+            },
+            "selected": true,
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/perforated2.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "35px",
+                "height": "50px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "innerHTML": {
+              "visible": true,
+              "content": "<div style='position:relative;left:12px;height: 100%;width: 10px;background: white;'><div style='position: relative;display:flex;align-items:center;height:50%'><div style='width: 10px;height: 10px;background: #f08419;border-radius: 50%;'></div></div><div style='position: relative;display:flex;align-items:center;height:50%'><div style='width: 10px;height: 10px;background: #f08419;border-radius: 50%;'></div></div></div>"
+            }
+          },
+          {
+            "id": "4-perforations",
+            "active": true,
+            "description": "4 agujeros <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "rot": {
+              "text": "4 agujeros"
+            },
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/perforated4.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "35px",
+                "height": "50px",
+                "-webkit-mask-size": "cover"
+              }
+            },
+            "innerHTML": {
+              "visible": true,
+              "content": "<div style='position:relative;left:12px;height: 100%;width: 10px;background: white;'><div style='position: relative;display:flex;align-items:center;height:25%'><div style='width: 10px;height: 10px;background: #f08419;border-radius: 50%;'></div></div><div style='position: relative;display:flex;align-items:center;height:25%'><div style='width: 10px;height: 10px;background: #f08419;border-radius: 50%;'></div></div><div style='position: relative;display:flex;align-items:center;height:25%'><div style='width: 10px;height: 10px;background: #f08419;border-radius: 50%;'></div></div><div style='position: relative;display:flex;align-items:center;height:25%'><div style='width: 10px;height: 10px;background: #f08419;border-radius: 50%;'></div></div></div>"
+            }
+          }
+        ]
+      },
+      {
+        "id": "grouping",
+        "description": "agrupar desagrupar docs de grupo <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+        "options": [
+          {
+            "id": "grouped",
+            "active": true,
+            "rot": {
+              "text": "agrupados"
+            },
+            "selected": true,
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/grouped.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "29px",
+                "height": "41px",
+                "margin-top": "10px",
+                "margin-bottom": "10px",
+                "-webkit-mask-size": "cover"
+              }
+            }
+          },
+          {
+            "id": "ungrouped",
+            "active": false,
+            "rot": {
+              "text": "desagrupados"
+            },
+            "message": {
+              "active": true,
+              "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Atención!!! Has seleccionado desagrupar los documentos. Cada uno se encuadernará por separado.</div></div>"
+            },
+            "icon": {
+              "style": {
+                "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/ungrouped.svg) no-repeat 0 0",
+                "background": "#084a79",
+                "width": "42px",
+                "height": "51px",
+                "-webkit-mask-size": "cover"
+              }
+            }
+          }
+        ],
+        "active": true,
+        "visible": true,
+        "orientation": "vertical",
+        "perRow": 2,
+        "rot": {
+          "text": "agrupación"
+        },
+        "info": {
+          "visible": true,
+          "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Selecciona si deseas que todos los archivos se encuadernen o grapen en un documento, en el orden en el que los has colocado.</br>O que se encuadernen o grapen individualmente</div></div>"
+        }
+      },
+      {
+        "type": "textarea",
+        "rot": {
+          "text": "comentarios"
+        },
+        "active": true,
+        "id": "comentarios",
+        "description": "campo usuario comentarios <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>"
+      },
+      {
+        "id": "cambio de config prueba",
+        "active": false,
+        "options": [
+          {
+            "id": "cambio",
+            "set_config": "config2",
+            "active": true,
+            "rot": {
+              "text": "cambiar"
+            }
+          }
+        ],
+        "rot": {
+          "text": "cambio config"
+        }
+      }
+    ]
+  },
+  "gestor_position": "right",
+  "info_modal": {
+    "info": {
+      "style": "position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 9999;transition: all .5s;pointer-events:none;background-color: rgba(255, 255, 255, 0);"
+    },
+    "modal": {
+      "style": "position: fixed;width: 60%;top: 60%;left: 50%;padding: 15px;text-align: center;background-color: transparent;box-sizing: border-box;opacity: 0;transform: translate(-50%, -50%);transition: all .5s;"
+    },
+    "modal_open": {
+      "style": "position: fixed;width: 60%;top: 50%;left: 50%;padding: 15px;text-align: center;background-color: transparent;box-sizing: border-box;opacity: 1;transform: translate(-50%, -50%);transition: all .5s;"
+    },
+    "info_open": {
+      "style": "position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 9999;transition: all .5s;pointer-events:unset;background-color: rgba(255, 255, 255, .9);"
+    }
+  },
+  "ordering_disclaimers_aleatory": {
+    "active": true,
+    "collection": [
+      {
+        "code": "<div style='position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;'><div style='padding: 10px;background: white;font-size: 16px;'>disclaimer 1...</div></div>"
+      },
+      {
+        "code": "<div style='position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;'><div style='padding: 10px;background: white;font-size: 16px;'>disclaimer 2...</div></div>"
+      },
+      {
+        "code": "<div style='position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;'><div style='padding: 10px;background: white;font-size: 16px;'>disclaimer 3...</div></div>"
+      },
+      {
+        "code": "<div style='position: relative;width:200px;height:200px;border-radius:10px;margin:10px;border: 1px dashed #084a79;text-align: center;display: flex;justify-content: center;align-content: center;align-itmes: center;margin: 0 auto 10px auto;align-items: center;'><div style='padding: 10px;background: white;font-size: 16px;'>disclaimer 4...</div></div>"
+      }
+    ],
+    "description": "colección de disclaimers mientras se genera el pedido"
+  },
+  "min-spiral-pages": 5,
+  "intro": {
+    "active": true,
+    "steps": [
+      {
+        "id": "step1",
+        "code": "<div style=\"position: relative;\">     <div         style=\"cursor:pointer;padding: 10px;background: #f08419;color:white;border-radius: 50%;box-shadow:0 0 6px #084a7959;font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;\">         ✕</div>     <div         style=\"padding: 10px;background: white;border-radius: 4px;border: 1px dashed;font-size: 16px;text-align: left;\">         Añade a un grupo todos los archivos que desees que tengan la misma configuración.         </br></br>Puedes crear tantos grupos como necesites.</br></br>         <div style=\"display: flex;margin-top: 10px;padding-top: 10px;align-items: center;border-top: 1px dotted #105e96;\">             <div                 style=\"min-width: 24px;height: 24px;margin: 0 12px 0 0;-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/settings.svg) no-repeat 0 0;             mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/settings.svg) no-repeat 0 0;-webkit-mask-size: cover;mask-size: cover;background:#105e96;\">             </div>             modifica las opciones de impresión y finalización del grupo seleccionado.         </div>         <div style=\"display: flex;margin-top: 10px;padding-top: 10px;align-items: center;border-top: 1px dotted #105e96;\">             <div                 style=\"min-width: 24px;height: 24px;margin: 0 12px 0 0;-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/upload-icon.svg) no-repeat 0 0;             mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/upload-icon.svg) no-repeat 0 0;-webkit-mask-size: cover;mask-size: cover;background:#105e96;\">             </div>             Añade archivos al grupo seleccionado         </div>         <div style=\"display: flex;margin-top: 10px;padding-top: 10px;align-items: center;border-top: 1px dotted #105e96;\">             <div                 style=\"min-width: 24px;height: 24px;margin: 0 12px 0 0;-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/cog.svg) no-repeat 0 0;             mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/cog.svg) no-repeat 0 0;-webkit-mask-size: cover;mask-size: cover;background:#105e96;\">             </div>             Una vez seleccionado un documento del grupo, puedes cambiar el color de algunas hojas o eliminarlas         </div>         <div style=\"display: flex;margin-top: 10px;padding-top: 10px;align-items: center;border-top: 1px dotted #105e96;\">             <div                 style=\"min-width: 24px;height: 24px;margin: 0 12px 0 0;-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/cross.svg) no-repeat 0 0;             mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/cross.svg) no-repeat 0 0;-webkit-mask-size: cover;mask-size: cover;background:#105e96;\">             </div>             Elimina el grupo seleccionado         </div>     </div> </div>"
+      }
+    ],
+    "visible": false,
+    "description": "intro con informaicón de la web"
+  },
+  "rules": {
+    "stapled": {
+      "id": "stapled",
+      "value": 30,
+      "html": "<div style=' padding: 20px;     width: 50%;     height: auto;     border-radius: 10px;     background: #ffffffd1;     display: flex;     justify-content: center;     align-items: center;     box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);     border: 5px dashed #0095ff; '><div>El <strong>número de hojas máximo</strong> para aplicar acabado <strong>\"grapado\"</strong> es de <strong>30 páginas</strong>.</br>Selecciona otro acabado o reduce el número de páginas.</div></div>",
+      "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>"
+    },
+    "description": "listado de reglas",
+    "stapled-creased": {
+      "description": "<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+      "id": "stapled-creased",
+      "value": 36,
+      "html": "<div style=' padding: 20px;     width: 50%;     height: auto;     border-radius: 10px;     background: #ffffffd1;     display: flex;     justify-content: center;     align-items: center;     box-shadow: 0px 0px 6px 0px rgba(8, 74, 121, 0.35);     border: 5px dashed #0095ff; '><div>El <strong>número de hojas máximo</strong> para aplicar acabado <strong>\"plegado y grapado en medio\"</strong> es de <strong>36 páginas</strong>.</br>Selecciona otro acabado o reduce el número de páginas.</div></div>"
+    }
+  },
+  "logo": {
+    "content": "<a href=\"https://digicopy.com.es\" target=\"blank\"><img src=\"https://digicopy.com.es/wp-content/uploads/2020/02/logo-digicopy-ok-300x113.png\" width=\"200\" alt=\"Digicopy Copistería en Zaragoza\" title=\"\" style=\"max-height: 100px;\"></a>"
+  },
+  "item-ref": {
+    "id": "page",
+    "description": "referenciar página u hoja para el cálculo de coste total <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span> valores: page|sheet"
+  },
+  "cost-per-unit": {
+    "description": "combinaciones y coste <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+    "id": "cost-per-page",
+    "nest": "paper-type,gramaje,color,faces",
+    "rules": [
+      {
+        "id": "paper-type:A3,gramaje:gramaje-80gr,color:b/w,faces:one_face",
+        "value": 0.08
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-80gr,color:b/w,faces:two_faces",
+        "value": 0.08
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-80gr,color:color,faces:one_face",
+        "value": 0.28
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-80gr,color:color,faces:two_faces",
+        "value": 0.28
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-100gr,color:b/w,faces:one_face",
+        "value": 0.12
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-100gr,color:b/w,faces:two_faces",
+        "value": 0.12
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-100gr,color:color,faces:one_face",
+        "value": 0.36
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-100gr,color:color,faces:two_faces",
+        "value": 0.36
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-160gr,color:b/w,faces:one_face",
+        "value": 0.4
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-160gr,color:b/w,faces:two_faces",
+        "value": 0.4
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-160gr,color:color,faces:one_face",
+        "value": 1.1
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-160gr,color:color,faces:two_faces",
+        "value": 1.1
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-250gr,color:b/w,faces:one_face",
+        "value": 0.75
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-250gr,color:b/w,faces:two_faces",
+        "value": 0.75
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-250gr,color:color,faces:one_face",
+        "value": 1.5
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-250gr,color:color,faces:two_faces",
+        "value": 1.5
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-350gr,color:b/w,faces:one_face",
+        "value": 1
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-350gr,color:b/w,faces:two_faces",
+        "value": 1
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-350gr,color:color,faces:one_face",
+        "value": 2
+      },
+      {
+        "id": "paper-type:A3,gramaje:gramaje-350gr,color:color,faces:two_faces",
+        "value": 2
+      },
+      {
+        "id": "paper-type:A3,gramaje:adhesivo,color:b/w,faces:one_face",
+        "value": 1.2
+      },
+      {
+        "id": "paper-type:A3,gramaje:adhesivo,color:b/w,faces:two_faces",
+        "value": 0
+      },
+      {
+        "id": "paper-type:A3,gramaje:adhesivo,color:color,faces:one_face",
+        "value": 2.1
+      },
+      {
+        "id": "paper-type:A3,gramaje:adhesivo,color:color,faces:two_faces",
+        "value": 0
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-80gr,color:b/w,faces:one_face",
+        "value": 0.04
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-80gr,color:b/w,faces:two_faces",
+        "value": 0.03
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-80gr,color:color,faces:one_face",
+        "value": 0.14
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-80gr,color:color,faces:two_faces",
+        "value": 0.14
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-100gr,color:b/w,faces:one_face",
+        "value": 0.06
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-100gr,color:b/w,faces:two_faces",
+        "value": 0.06
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-100gr,color:color,faces:one_face",
+        "value": 0.18
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-100gr,color:color,faces:two_faces",
+        "value": 0.18
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-160gr,color:b/w,faces:one_face",
+        "value": 0.2
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-160gr,color:b/w,faces:two_faces",
+        "value": 0.2
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-160gr,color:color,faces:one_face",
+        "value": 0.6
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-160gr,color:color,faces:two_faces",
+        "value": 0.6
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-250gr,color:b/w,faces:one_face",
+        "value": 0.35
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-250gr,color:b/w,faces:two_faces",
+        "value": 0.35
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-250gr,color:color,faces:one_face",
+        "value": 0.75
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-250gr,color:color,faces:two_faces",
+        "value": 0.75
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-350gr,color:b/w,faces:one_face",
+        "value": 0.5
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-350gr,color:b/w,faces:two_faces",
+        "value": 0.5
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-350gr,color:color,faces:one_face",
+        "value": 1
+      },
+      {
+        "id": "paper-type:A4,gramaje:gramaje-350gr,color:color,faces:two_faces",
+        "value": 1
+      },
+      {
+        "id": "paper-type:A4,gramaje:adhesivo,color:b/w,faces:one_face",
+        "value": 0.6
+      },
+      {
+        "id": "paper-type:A4,gramaje:adhesivo,color:b/w,faces:two_faces",
+        "value": 0
+      },
+      {
+        "id": "paper-type:A4,gramaje:adhesivo,color:color,faces:one_face",
+        "value": 1.2
+      },
+      {
+        "id": "paper-type:A4,gramaje:adhesivo,color:color,faces:two_faces",
+        "value": 0
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-80gr,color:b/w,faces:one_face",
+        "value": 0.02
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-80gr,color:b/w,faces:two_faces",
+        "value": 0.02
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-80gr,color:color,faces:one_face",
+        "value": 0.07
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-80gr,color:color,faces:two_faces",
+        "value": 0.07
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-100gr,color:b/w,faces:one_face",
+        "value": 0.03
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-100gr,color:b/w,faces:two_faces",
+        "value": 0.03
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-100gr,color:color,faces:one_face",
+        "value": 0.09
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-100gr,color:color,faces:two_faces",
+        "value": 0.09
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-160gr,color:b/w,faces:one_face",
+        "value": 0.1
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-160gr,color:b/w,faces:two_faces",
+        "value": 0.1
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-160gr,color:color,faces:one_face",
+        "value": 0.3
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-160gr,color:color,faces:two_faces",
+        "value": 0.3
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-250gr,color:b/w,faces:one_face",
+        "value": 0.2
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-250gr,color:b/w,faces:two_faces",
+        "value": 0.2
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-250gr,color:color,faces:one_face",
+        "value": 0.4
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-250gr,color:color,faces:two_faces",
+        "value": 0.4
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-350gr,color:b/w,faces:one_face",
+        "value": 0.3
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-350gr,color:b/w,faces:two_faces",
+        "value": 0.3
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-350gr,color:color,faces:one_face",
+        "value": 0.5
+      },
+      {
+        "id": "paper-type:A5,gramaje:gramaje-350gr,color:color,faces:two_faces",
+        "value": 0.5
+      },
+      {
+        "id": "paper-type:A5,gramaje:adhesivo,color:b/w,faces:one_face",
+        "value": 0.3
+      },
+      {
+        "id": "paper-type:A5,gramaje:adhesivo,color:b/w,faces:two_faces",
+        "value": 0
+      },
+      {
+        "id": "paper-type:A5,gramaje:adhesivo,color:color,faces:one_face",
+        "value": 0.6
+      },
+      {
+        "id": "paper-type:A5,gramaje:adhesivo,color:color,faces:two_faces",
+        "value": 0
+      }
+    ]
+  },
+  "cost-per-spiral": {
+    "description": "rangos coste de encuadernado con espiral <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+    "id": "cost-spiral-per-pages",
+    "rules": [
+      {
+        "id": "paper-type:A3,num-pages:1-60",
+        "value": 3
+      },
+      {
+        "id": "paper-type:A3,num-pages:61-120",
+        "value": 3.5
+      },
+      {
+        "id": "paper-type:A3,num-pages:121-200",
+        "value": 4
+      },
+      {
+        "id": "paper-type:A3,num-pages:201-280",
+        "value": 4.5
+      },
+      {
+        "id": "paper-type:A3,num-pages:281-360",
+        "value": 5
+      },
+      {
+        "id": "paper-type:A3,num-pages:361-420",
+        "value": 5.5
+      },
+      {
+        "id": "paper-type:A4,num-pages:1-60",
+        "value": 1.5
+      },
+      {
+        "id": "paper-type:A4,num-pages:61-120",
+        "value": 2
+      },
+      {
+        "id": "paper-type:A4,num-pages:121-200",
+        "value": 2.5
+      },
+      {
+        "id": "paper-type:A4,num-pages:201-280",
+        "value": 3
+      },
+      {
+        "id": "paper-type:A4,num-pages:281-360",
+        "value": 3.5
+      },
+      {
+        "id": "paper-type:A4,num-pages:361-420",
+        "value": 4
+      },
+      {
+        "id": "paper-type:A5,num-pages:1-60",
+        "value": 1.5
+      },
+      {
+        "id": "paper-type:A5,num-pages:61-120",
+        "value": 2
+      },
+      {
+        "id": "paper-type:A5,num-pages:121-200",
+        "value": 2.5
+      },
+      {
+        "id": "paper-type:A5,num-pages:201-280",
+        "value": 3
+      },
+      {
+        "id": "paper-type:A5,num-pages:281-360",
+        "value": 3.5
+      },
+      {
+        "id": "paper-type:A5,num-pages:361-420",
+        "value": 4
+      }
+    ]
+  },
+  "ordering-preview": {
+    "style": "background-color: rgba(255, 255, 255, 0.9);inset: 0px;pointer-events: unset;position: fixed;transition: all 0.5s ease 0s;z-index: 9999;",
+    "order-resume": {
+      "style": ""
+    }
+  },
+  "custom-style-classes": {
+    "order-preview-head-1": {
+      "style": "font-weight: bold;     text-transform: uppercase;     font-size: 20px;padding: 4px 0;color:#2d5c88;"
+    },
+    "order-preview-head-2": {
+      "style": "font-weight: bold;     text-transform: uppercase;     font-size: 14px;padding: 4px 0;color:#2d5c88;"
+    },
+    "order-preview-head-3": {
+      "style": "font-weight: bold;     text-transform: uppercase;     font-size: 12px;padding: 4px 0;color:#2d5c88;"
+    },
+    "order-preview-property-name": {
+      "style": "text-transform: uppercase;     font-size: 9px;padding: 4px 0;color:#2d5c88;border-bottom: 1px dotted #2d5c88;"
+    },
+    "order-preview-property-value": {
+      "style": "font-weight: bold;     text-transform: uppercase;     font-size: 9px;padding: 4px 0 8px 0; color:#f08419;"
+    },
+    "order-preview-wrap": {
+      "style": "width: 100%;     height: 1px;     background:#2d5c88;;     margin: 20px 0 20px 0;"
+    },
+    "order-preview-doc": {
+      "style": "font-weight: bold;     text-transform: uppercase;     font-size: 12px;padding: 4px 0;text-decoration:underline;color:#2d5c88;"
+    },
+    "order-preview-total": {
+      "style": "font-weight: bold;     text-transform: uppercase;     font-size: 20px;padding: 34px 10px; 0;color:#084a79;float: right;"
+    },
+    "order-preview-head-4": {
+      "style": "text-transform: uppercase;     font-size: 8px;     padding: 11px 0;     color: #f08419;     font-style: italic;"
+    }
+  },
+  "styling": {
+    "description": "lista de css rules to override styling <span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+    "rules": [
+      {
+        "id": ".gestor-config-item-selector-container",
+        "value": "background:red !important;",
+        "active": false
+      },
+      {
+        "id": ".closePB-icon",
+        "value": "width: 22px;height: 22px;margin: 0 auto;-webkit-mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/cross.svg) no-repeat 0 0;mask: url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/cross.svg) no-repeat 0 0;-webkit-mask-size: cover;mask-size: cover;background: white",
+        "active": true
+      },
+      {
+        "id": ".sidebar",
+        "active": true,
+        "value": "display:none !important;"
+      },
+      {
+        "id": "#footer-page",
+        "active": true,
+        "value": "display:none;"
+      },
+      {
+        "id": "*",
+        "active": true,
+        "value": "box-sizing: unset !important;"
+      },
+      {
+        "id": ".modal-cpdo",
+        "active": true,
+        "value": "max-width:360px;box-shadow: 0 0 6px #084a7959;padding: 0 !important;"
+      },
+      {
+        "id": ".gestor-config-item-text",
+        "active": false,
+        "value": "line-height:0;"
+      },
+      {
+        "id": ".doc-edit .doc-info .doc-info-details .doc-info-details-name,\n .doc-edit .doc-info .doc-info-details .doc-info-details-name p",
+        "active": true,
+        "value": "font-size: 12px !important;\n    margin: 0 !important;\n    font-weight: normal !important;"
+      },
+      {
+        "id": ".flag",
+        "active": true,
+        "value": "display: inline-flex !important;\n    border-radius: 4px;\n    border: 1px solid #105e96;\n    padding: 4px;\n    margin: 4px;\n    overflow: hidden;\n    height: 10px;\n    justify-content: center;\n    align-items: center;"
+      },
+      {
+        "id": ".doc",
+        "active": true,
+        "value": "line-height: 8px;"
+      },
+      {
+        "id": ".main-result .turn-page .turn-page-left,  .main-result-doubleFace .turn-page .turn-page-left, .main-result .turn-page .turn-page-top, .main-result-doubleFace .turn-page .turn-page-top",
+        "active": true,
+        "value": "line-height: 50px;"
+      },
+      {
+        "id": ".documents-container-header .documents-container-header-closePB",
+        "active": true,
+        "value": "display:none !important;"
+      },
+      {
+        "id": ".documents-container-header .documents-container-header-infoPB",
+        "active": true,
+        "value": "margin-right: 50px !important;"
+      }
+    ]
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXN0Ijp0cnVlLCJob3N0IjoiZGlnaWNvcHkuY29tLmVzIiwicmVkaXJlY3QiOiJodHRwczovL3JhYW5haGV5cmF0aS5jb20vIiwibGljZW5zZSI6eyJ2YWx1ZSI6InN0YW5kYXJkIn19.UzOTU4DwGpPYEY5jDePahu-VLbr4VF0-FkQykJHJpEk",
+  "gestor_hidden": false,
+  "icons": [],
+  "configs": [
+    {
+      "id": "config2",
+      "gestor": {
+        "options": [
+          {
+            "id": "grouping",
+            "description": "agrupar desagrupar docs de grupo<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "options": [
+              {
+                "id": "grouped",
+                "active": true,
+                "rot": {
+                  "text": "VOLVER"
+                },
+                "selected": false,
+                "icon": {
+                  "style": {
+                    "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/grouped.svg) no-repeat 0 0",
+                    "background": "#084a79",
+                    "width": "29px",
+                    "height": "41px",
+                    "margin-top": "10px",
+                    "margin-bottom": "10px",
+                    "-webkit-mask-size": "cover"
+                  }
+                },
+                "set_config": "core"
+              }
+            ],
+            "active": true,
+            "visible": true,
+            "orientation": "vertical",
+            "perRow": 1
+          },
+          {
+            "id": "grouping-copy",
+            "description": "agrupar desagrupar docs de grupo<span style=\"color:red\">no cambiar!!!!!!!!!!!!</span>",
+            "options": [
+              {
+                "id": "grouped",
+                "active": true,
+                "rot": {
+                  "text": "agrupados"
+                },
+                "selected": false,
+                "icon": {
+                  "style": {
+                    "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/grouped.svg) no-repeat 0 0",
+                    "background": "#084a79",
+                    "width": "29px",
+                    "height": "41px",
+                    "margin-top": "10px",
+                    "margin-bottom": "10px",
+                    "-webkit-mask-size": "cover"
+                  }
+                },
+                "set_config": "core"
+              },
+              {
+                "id": "ungrouped",
+                "active": true,
+                "rot": {
+                  "text": "desagrupados"
+                },
+                "message": {
+                  "active": true,
+                  "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Atención!!! Has seleccionado desagrupar los documentos. Cada uno se encuadernará por separado.</div></div>"
+                },
+                "icon": {
+                  "style": {
+                    "-webkit-mask": "url(https://digicopy.com.es/wp-content/plugins/Custom-Plugin-Digicopy-Online/app/assets/images/custom/svg/ungrouped.svg) no-repeat 0 0",
+                    "background": "#084a79",
+                    "width": "42px",
+                    "height": "51px",
+                    "-webkit-mask-size": "cover"
+                  }
+                }
+              }
+            ],
+            "active": true,
+            "visible": true,
+            "orientation": "vertical",
+            "perRow": 2,
+            "rot": {
+              "text": "agrupación"
+            },
+            "info": {
+              "visible": true,
+              "content": "<div style='position: relative;box-shadow: 0 0 11px #084a7959;background:white'><div style='cursor:pointer;padding: 10px;background: #f08419;color: white;border-radius: 50%;/* border: 1px dashed; */font-size: 16px;position: absolute;top: -14px;z-index: 4;width: 5px;height: 5px;right: -15px;display: flex;justify-content: center;align-items: center;box-shadow: 0 0 11px #084a7959;'>x</div><div style='padding: 10px;/* background: #084a79; */border-radius: 4px;border: 1px dashed;font-size: 16px;/* color: white; */line-height: 2;text-align: left;'>Selecciona si deseas que todos los documentos del grupo vayan juntos o con acabado por separado.</div></div>"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "edit_source": "https://digicopy.com.es/custom-plugin-digicopy-online/#/",
+  "descriptions": {
+    "version": "versión de",
+    "active": "cargar directamente el escenario principal",
+    "visible_responsive": "menú configurador responsive inicializado visible",
+    "gestor_position": "posición lateral, izda o derecha, del menú de configuración",
+    "edit_source": "path de la preview"
+  }
+}

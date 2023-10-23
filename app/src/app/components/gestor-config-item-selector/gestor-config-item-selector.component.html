@@ -1,0 +1,21 @@
+<div *ngIf="!data$['content']" [style.width.%]="widthPerCent" class="gestor-config-item-selector"
+    [className]="data$.className" [ngClass]="{
+    'gestor-config-item-selector-container-selected':data$.selected && data$['active'],
+    'gestor-config-item-selector-container-disable':!data$['active']
+    }">
+    <div class="gestor-config-item-selector-container">
+        <div class="gestor-config-item-selector-icon" [ngStyle]="data$.icon?.style"></div>
+        <div class="gestor-config-item-selector-text" [ngStyle]="data$.rot.style"
+            [innerHTML]="(data$.rot.text | translate)| safeHtml"></div>
+        <div class="gestor-config-item-selector-description" [ngStyle]="data$.rot['description']?.style">
+            {{data$.rot['description']?.text | translate}}</div>
+    </div>
+    <div class="deco" [innerHTML]="(data$['deco'] && data$['deco']['active'] ? data$['deco']['content'] : '')|safeHtml">
+    </div>
+</div>
+<div *ngIf="data$['content']" [style.width.%]="widthPerCent" class="gestor-config-item-selector"
+    [className]="data$.className" [ngClass]="{
+    'gestor-config-item-selector-container-selected':data$.selected && data$['active'],
+    'gestor-config-item-selector-container-disable':!data$['active']
+    }" [innerHTML]="(data$['content'] ? data$['content'] : null)|safeHtml">
+</div>

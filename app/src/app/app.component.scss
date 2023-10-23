@@ -1,0 +1,56 @@
+@import "../assets/styles/variables";
+
+* {
+    box-sizing: unset !important;
+}
+
+:host {
+    font-size: $font-size-primary;
+    color: $font-color-primary;
+
+    .info {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        transition: all .5s;
+
+        &.modal-cpdo-close {
+            pointer-events: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        &.modal-cpdo-open {
+            pointer-events: all;
+            background-color: rgba(255, 255, 255, .8);
+
+            .modal-cpdo {
+                opacity: 1;
+                top: 50%;
+            }
+        }
+
+        .modal-cpdo {
+            position: fixed;
+            width: 60%;
+            top: 45%;
+            left: 50%;
+            padding: 15px;
+            text-align: center;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+        }
+    }
+}
+
+@media (max-width: $screen-sm) {
+    :host {
+        font-size: $font-size-responsive;
+    }
+
+}

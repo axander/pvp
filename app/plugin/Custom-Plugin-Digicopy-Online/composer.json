@@ -1,0 +1,18 @@
+{
+    "name": "plugin/custom-plugin-digicopy-online",
+    "description": "Gestión de pedidos de impresión de documentos .pdf",
+    "type": "project",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Plugin\\CustomPluginDigicopyOnline\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alejandro Martínez",
+            "email": "axander_1973@hotmail.com"
+        }
+    ],
+    "require": {}
+}

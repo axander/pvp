@@ -1,0 +1,36 @@
+<div *ngIf="mode != 'edit'" class="docs">
+    <div *ngFor="let file of files$" class="doc" [style.left.px]="10" [style.top.px]="getPosition(file, 'non-edit')"
+        [ngClass]="{'doc-selected':file.selected}">
+        <div class="doc-info-details-info">{{file.index}}</div>
+        <div class="doc-info-details-del" (click)="deleteFile(file)">✕</div>
+        <div class="doc-delete" (click)="deleteFile(file)"></div>
+        <div class="doc-info-details-name">{{file.info.name}}</div>
+        <div class="doc-info-details-pages">{{file.numPages}}{{(file.numPages == 1 ? 'GENERIC.PAGE':'GENERIC.PAGES')|
+            translate}}</div>
+        <div class="doc-info-details-size">{{file.info.size}}{{file.info.measure}}</div>
+    </div>
+</div>
+<div *ngIf="mode == 'edit'" class="docs-edit">
+    <div *ngFor="let file of files$" class="doc-edit" [ngClass]="{'doc-selected':file.selected}" [style.top.px]="getPosition(file,'edit')">
+        <div class="doc-info" >
+            <div class="doc-info-index">{{file.index}}</div>
+            <div class="doc-info-details">
+                <p class="doc-info-details-name">{{file.info.name}}</p>
+                <div class="doc-info-details-properties">
+                    <div class="doc-info-size">
+                        <div class="doc-info-size-icon"></div>
+                        <div class="doc-info-size-text">{{file.info.size}}{{file.info.measure}}</div>
+                    </div>
+                    <div class="doc-info-numPages">
+                        <div class="doc-info-numPages-icon"></div>
+                        <div class="doc-info-numPages-text">{{file.numPages}} {{ (file.numPages!>1 ? 'GENERIC.PAGES'
+                            :'GENERIC.PAGE' ) | translate}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="doc-delete" (click)="deleteFile(file)">
+        </div>
+    </div>
+</div>

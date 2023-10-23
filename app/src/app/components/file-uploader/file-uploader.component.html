@@ -1,0 +1,77 @@
+<div *ngIf="!mode" class="uploader" [appDroppable]={id:id} (onDragEventCss)="onZoneEvent($event)"
+    [ngClass]="{'uploader_hover':over}">
+    <div class="dropable_div">
+        <div class="logo">
+            <!--<div class="logo-icon">
+            </div>-->
+            <div [ngClass]="{'logo-icon':!logo}" [innerHTML]="(logo? logo : '') | safeHtml">
+            </div>
+        </div>
+        <div class="header1">{{'UPLOADER.TEXT1' | translate }}</div>
+        <div class="upload-icon-filled">
+            <div class="upload-icon-filled-svg"></div>
+            <label class="input-file-container">
+                <input id="uploader_input" type="file" name="image" (change)="fileProgress($event)"
+                    onchange="console.log(event.target.files)" accept="application/pdf" multiple="multiple" />
+            </label>
+        </div>
+        <div class="header1">{{'UPLOADER.TEXT2' | translate }}</div>
+        <div>{{'UPLOADER.TEXT3' | translate }}</div>
+    </div>
+</div>
+<div *ngIf="mode=='addGroup'" class="uploader-min" [appDroppable]={id:id} (onDragEventCss)="onZoneEvent($event)"
+    [ngClass]="{'uploader-min_hover':over}">
+    <div class="dropable_div">
+        <div class="upload-icon-filled">
+            <div class="upload-icon-filled-svg"></div>
+
+        </div>
+        <div class="uploader-min-container-text">
+            <div class="uploader-min-text1">{{'UPLOADER_MIN.TEXT1' | translate }}</div>
+            <div class="uploader-min-text2">{{'UPLOADER_MIN.TEXT2' | translate }}</div>
+        </div>
+        <label class="input-file-container">
+            <input id="uploader_input" type="file" name="image" (change)="fileProgress($event)"
+                onchange="console.log(event.target.files)" accept="application/pdf" multiple="multiple" />
+        </label>
+    </div>
+</div>
+<div *ngIf="mode =='emptyGestor'" class="uploader-empty-gestor" [appDroppable]={id:id} (onDragEventCss)="onZoneEvent($event)"
+    [ngClass]="{'uploader-empty-gestor_hover':over}">
+    <div class="dropable_div">
+        <div class="header1">{{'UPLOADER.TEXT1' | translate }}</div>
+        <div class="upload-icon-filled">
+            <div class="upload-icon-filled-svg"></div>
+            <label class="input-file-container">
+                <input id="uploader_input" type="file" name="image" (change)="fileProgress($event)"
+                    onchange="console.log(event.target.files)" accept="application/pdf" multiple="multiple" />
+            </label>
+        </div>
+        <div class="header1">{{'UPLOADER.TEXT2' | translate }}</div>
+    </div>
+</div>
+<div *ngIf="mode =='singularDoc'" class="uploader-singular"
+    [ngClass]="{'uploader-singular_hover':over}">
+    <div class="dropable_div">
+        <div class="upload-icon-filled">
+            <div class="upload-icon-filled-svg"></div>
+            <label class="input-file-container">
+                <input id="uploader_input" type="file" name="image" (change)="fileProgress($event)"
+                    onchange="console.log(event.target.files)" accept="application/pdf" multiple="multiple" />
+            </label>
+        </div>
+    </div>
+</div>
+<div *ngIf="mode =='singularDocGroup'" class="uploader-singular-group" [ngClass]="{'uploader-singular-group_hover':over}">
+    <div class="dropable_div">
+        <div class="header1">{{'UPLOADER.TEXT1' | translate }}</div>
+        <div class="upload-icon-filled">
+            <div class="upload-icon-filled-svg"></div>
+            <label class="input-file-container">
+                <input id="uploader_input" type="file" name="image" (change)="fileProgress($event)"
+                    onchange="console.log(event.target.files)" accept="application/pdf" multiple="multiple" />
+            </label>
+        </div>
+        <div class="header1">{{'UPLOADER.TEXT2' | translate }}</div>
+    </div>
+</div>

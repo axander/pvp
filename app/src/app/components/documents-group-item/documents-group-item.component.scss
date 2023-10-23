@@ -1,0 +1,382 @@
+@import "../../../assets/styles/variables";
+
+:host {
+    .doc {
+        position: relative;
+        width: 60px;
+        height: 80px;
+        cursor: move;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(8, 74, 121, 0.35);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(8, 74, 121, 0.35);
+        box-shadow: 0px 0px 5px 0px rgba(8, 74, 121, 0.35);
+        margin-bottom: 20px;
+        border: 1px dashed $neutral-dark-light;
+        opacity: 0;
+
+        .doc-info-details-info {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 10px;
+            height: 10px;
+            background: $neutral-dark-light;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .doc-info-details-del {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 10px;
+            height: 10px;
+            background: $primary-orange;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .doc-info-details-name {
+            color: $neutral-dark-light;
+            font-weight: bold;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            height: 24px;
+        }
+
+        .doc-info-details-pages {
+            position: absolute;
+            bottom: 20px;
+            color: $neutral-dark-light;
+        }
+
+        .doc-info-details-size {
+            position: absolute;
+            bottom: 0;
+            color: $neutral-dark-light;
+        }
+
+        >div {
+            font-size: 9px;
+            overflow-wrap: break-word;
+            letter-spacing: 0;
+            padding: $main-padding-reduce;
+
+        }
+
+        &.doc-selected {
+            border: 1px dashed $secondary;
+            background: $secondary-light;
+
+            .doc-info-details-info {
+                position: absolute;
+                bottom: -8px;
+                right: -8px;
+                width: 10px;
+                height: 10px;
+                background: $secondary;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .doc-info-details-del {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                width: 10px;
+                height: 10px;
+                background: $primary-orange;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .doc-info-details-name {
+                color: $secondary ;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .doc-edit {
+        margin: 10px;
+        padding: 10px;
+        background: white;
+        border-radius: 4px;
+        display: flex;
+        margin-right: $main-margin;
+        opacity: 0;
+
+        &.doc-selected {
+            background: $secondary-light;
+        }
+
+        .doc-info {
+            display: flex;
+            word-break: break-word;
+            width: 100%;
+            align-items: center;
+
+            .doc-info-index {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: $secondary;
+                color: white;
+                margin-right: $main-margin;
+            }
+
+            .doc-info-details {
+                padding-left: 10px;
+                border-left: 1px dashed $secondary;
+                width: 100%;
+
+                .doc-info-details-name {
+                    display: unset;
+                    align-items: center;
+                    margin-bottom: $main-margin;
+                    font-size: $font-size-high;
+
+                    p {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        max-width: 300px;
+                        font-size: 12px
+                    }
+                }
+
+                .doc-info-details-properties {
+                    display: flex;
+                    align-items: center;
+
+                    .doc-info-size {
+                        display: flex;
+                        //justify-content: center;
+                        align-items: center;
+                        width: 80px;
+                        /*margin-right: $main-margin-reduce;
+                        margin-left: auto;*/
+
+                        .doc-info-size-icon {
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 4px;
+                            -webkit-mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+                            mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+                            -webkit-mask-size: cover;
+                            mask-size: cover;
+                            background: $neutral-light;
+                        }
+
+                        .doc-info-size-text {
+                            font-size: 10px;
+                            color: $neutral-light;
+                        }
+                    }
+
+                    .doc-info-numPages {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        //justify-content: center;
+                        align-items: center;
+                        /*margin-right: $main-margin-reduce;
+                        margin-left: auto;*/
+
+                        .doc-info-numPages-icon {
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 4px;
+                            -webkit-mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+                            mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+                            -webkit-mask-size: cover;
+                            mask-size: cover;
+                            background: $neutral-light;
+                        }
+
+                        .doc-info-numPages-text {
+                            font-size: 10px;
+                            color: $neutral-light;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .doc-delete {
+            margin: auto;
+            margin-right: 0;
+            width: 14px;
+            height: 14px;
+            /*---webkit-mask: url($plugin-assets + "assets/images/bin.svg") no-repeat 0 0;
+                    mask: url($plugin-assets + "assets/images/bin.svg") no-repeat 0 0;*/
+            -webkit-mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+            mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+            mask-size: cover;
+            background: $secondary
+        }
+    }
+}
+
+@media (max-width: $screen-sm) {
+    :host {
+        .doc {
+            width: 60px;
+            height: 80px;
+            cursor: pointer;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(8, 74, 121, 0.35);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(8, 74, 121, 0.35);
+            box-shadow: 0px 0px 5px 0px rgba(8, 74, 121, 0.35);
+            margin-bottom: $main-margin;
+
+            >div {
+                font-size: 9px;
+                overflow-wrap: break-word;
+                letter-spacing: 0;
+            }
+        }
+
+        .doc-edit {
+            margin: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            margin-right: $main-margin;
+
+            .doc-info {
+                display: flex;
+                word-break: break-word;
+                width: 100%;
+                align-items: center;
+
+                .doc-info-index {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: $secondary;
+                    color: white;
+                    margin-right: $main-margin;
+                }
+
+                .doc-info-details {
+                    padding-left: 10px;
+                    border-left: 1px dashed $secondary;
+                    width: 100%;
+
+                    .doc-info-details-name {
+                        display: unset;
+                        align-items: center;
+                        margin-bottom: $main-margin;
+                        font-size: $font-size-high;
+
+                        p {
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            max-width: 190px;
+                            min-width: 100px;
+                            font-size: 9px;
+
+                        }
+                    }
+
+
+                    .doc-info-details-properties {
+                        display: flex;
+                        align-items: center;
+
+                        .doc-info-size {
+                            display: flex;
+                            //justify-content: center;
+                            align-items: center;
+                            width: 80px;
+                            /*margin-right: $main-margin-reduce;
+                            margin-left: auto;*/
+
+                            .doc-info-size-icon {
+                                width: 16px;
+                                height: 16px;
+                                margin-right: 4px;
+                                -webkit-mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+                                mask: url($plugin-assets + "assets/images/cloud-upload.svg") no-repeat 0 0;
+                                -webkit-mask-size: cover;
+                                mask-size: cover;
+                                background: $neutral-light;
+                            }
+
+                            .doc-info-size-text {
+                                font-size: 10px;
+                                color: $neutral-light;
+                            }
+                        }
+
+                        .doc-info-numPages {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            display: flex;
+                            //justify-content: center;
+                            align-items: center;
+                            /*margin-right: $main-margin-reduce;
+                            margin-left: auto;*/
+
+                            .doc-info-numPages-icon {
+                                width: 16px;
+                                height: 16px;
+                                margin-right: 4px;
+                                -webkit-mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+                                mask: url($plugin-assets + "assets/images/book.svg") no-repeat 0 0;
+                                -webkit-mask-size: cover;
+                                mask-size: cover;
+                                background: $neutral-light;
+                            }
+
+                            .doc-info-numPages-text {
+                                font-size: 10px;
+                                color: $neutral-light;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .doc-delete {
+                margin: auto;
+                margin-right: 0;
+                width: 14px;
+                height: 14px;
+                /*---webkit-mask: url($plugin-assets + "assets/images/bin.svg") no-repeat 0 0;
+                        mask: url($plugin-assets + "assets/images/bin.svg") no-repeat 0 0;*/
+                -webkit-mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                mask: url($plugin-assets + "assets/images/cross.svg") no-repeat 0 0;
+                mask-size: cover;
+                background: $secondary
+            }
+        }
+    }
+}

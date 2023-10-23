@@ -1,0 +1,32 @@
+<div *ngIf="mode != 'edit'" class="doc" (click)="selectFile(data$)" [ngClass]="{'doc-selected':data$.selected}" >
+    <div class="doc-info-details-info">{{data$.index}}</div>
+    <div class="doc-info-details-del" (click)="deleteFile(data$)">✕</div>
+    <div class="doc-info-details-name">{{data$.info.name}}</div>
+    <div class="doc-info-details-pages">{{data$.numPages}}{{(data$.numPages == 1 ? 'GENERIC.PAGE':'GENERIC.PAGES')|
+            translate}}</div>
+    <div class="doc-info-details-size">{{data$.info.size}}{{data$.info.measure}}</div>
+</div>
+<div *ngIf="mode == 'edit'" class="doc-edit" (click)="selectFile(data$)">
+    <div class="doc-info" [ngClass]="{'doc-selected':data$.selected}">
+        <div class="doc-info-index">{{data$.index}}</div>
+        <div class="doc-info-details">
+            <div class="doc-info-details-name">
+                <p>{{data$.info.name}}</p></div>
+            <div class="doc-info-details-properties">
+                <div class="doc-info-size">
+                    <div class="doc-info-size-icon"></div>
+                    <div class="doc-info-size-text">{{data$.info.size}}{{data$.info.measure}}</div>
+                </div>
+                <div class="doc-info-numPages">
+                    <div class="doc-info-numPages-icon"></div>
+                    <div class="doc-info-numPages-text">{{data$.numPages}} {{ (data$.numPages!>1 ? 'GENERIC.PAGES'
+                        :'GENERIC.PAGE' ) | translate}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="doc-delete" (click)="deleteFile(data$)">
+    </div>
+
+</div>

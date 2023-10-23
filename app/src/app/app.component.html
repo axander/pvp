@@ -1,0 +1,16 @@
+<router-outlet></router-outlet>
+<div *ngIf="initialized">
+    <app-main-container *ngIf="!active"></app-main-container>
+    <app-gestor-container *ngIf="active"></app-gestor-container>
+    <app-ordering *ngIf="ordering"></app-ordering>
+    <!--<app-intro *ngIf="intro" ></app-intro>-->
+</div>
+
+<div *ngIf="!initialized || spinner">
+    <app-spinner></app-spinner>
+</div>
+<div class="info" [ngClass]="{'modal-cpdo-open':intro,'modal-cpdo-close':!intro}" (click)="toogleInfo()"
+    [style]="intro ? infoStyleOpen : infoStyle">
+    <div class="modal-cpdo" [innerHTML]="contentInfo| safeHtml"
+        [style]="intro ? modalStyleOpen ? modalStyleOpen : '' : modalStyle"></div>
+</div>

@@ -1,0 +1,195 @@
+{
+    "GENERIC": {
+        "CLOSE": "cerrar",
+        "GROUP": "GRUPO",
+        "ADD": "añadir",
+        "DELETE": "eliminar",
+        "COPY": "copia",
+        "COPIES": "copias",
+        "PAGE": "página",
+        "PAGES": "paginas",
+        "SHEET": "hoja",
+        "SHEETS": "hojas",
+        "PAGEREDUCE": "pag",
+        "DOC": "documento",
+        "DOCS": "documentos",
+        "FINISHED": "acabado",
+        "FINISHES": "acabados",
+        "NONEFINISHES": "sin acabados",
+        "ADDTOCART": "añadir a carrito",
+        "CONFIRM": "confirmar",
+        "CANCEL": "cancelar",
+        "TOTALAMMOUNT": "coste total",
+        "MAINFEATURES": "configuración principal:",
+        "SUBFEATURES": "configuración específica de documento:",
+        "ORDERING": {
+            "ACTION": "creando pedido",
+            "UPLOADING": "subiendo documentos...",
+            "ADDCART": "generando pedido...",
+            "REDIRECTING": "redirigiendo..."
+        },
+        "ORDER": {
+            "ROTATION": "rotado",
+            "SLIDES PER PAGE": "slides por página",
+            "DELETED": "página eliminada",
+            "COLORED": "página a color",
+            "NOCOLORED": "página en B/W",
+            "DOUBLE-FACE-REVERSE-DIRECTION-CHANGED": "sentido del reverso de páginas pares en impresión a dos caras",
+            "NONE": "Ninguno/a",
+            "EVERY": "Todos/as",
+            "SOME_COLORED": "varios color",
+            "SOME_NOT_COLORED": "varios B/W",
+            "SOME_ROTATED": "rotación",
+            "SOME_PERPAGE": "varios por página",
+            "MANY": {
+                "MANY":"Varios/as",
+                "B&W": "Varias b&w",
+                "COLOR": "Varias color"
+            },
+            "FINISHED_NUMBER": "nº de acabados"
+        }
+    },
+    "UPLOADER": {
+        "TEXT1": "arrastra tus documentos de pdf aquí",
+        "TEXT2": "seleccionar documentos pdf",
+        "TEXT3": "*sólo se aceptan documentos en formato .pdf"
+    },
+    "UPLOADER_MIN": {
+        "TEXT1": "crea un nuevo grupo desde aquí",
+        "TEXT2": "selecciona o arrastra los documentos pdf"
+    },
+    "DOCUMENTS": {},
+    "GESTOR": {
+        "ITEMS": {
+            "ADDDOC": {
+                "TITLE": "añadir más documentos",
+                "OPTIONS": {}
+            },
+            "COPIESNUMBER": {
+                "TITLE": "copias",
+                "OPTIONS": {}
+            },
+            "COLOR": {
+                "TITLE": "color",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "blanco y negro"
+                    },
+                    "OPTION2": {
+                        "TITLE": "a color"
+                    }
+                }
+            },
+            "PAPERTYPE": {
+                "TITLE": "tipo de papel",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "A4 80gr"
+                    },
+                    "OPTION2": {
+                        "TITLE": "A4 100gr."
+                    },
+                    "OPTION3": {
+                        "TITLE": "A4 cartulina"
+                    },
+                    "OPTION4": {
+                        "TITLE": "A3 80gr."
+                    },
+                    "OPTION5": {
+                        "TITLE": "A3 cartulina"
+                    },
+                    "OPTION6": {
+                        "TITLE": "A5 80gr."
+                    }
+                }
+            },
+            "FACES": {
+                "TITLE": "caras",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "dos caras"
+                    },
+                    "OPTION2": {
+                        "TITLE": "una cara"
+                    }
+                }
+            },
+            "MULTIPLEPAGES": {
+                "TITLE": "páginas múltiples",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "1 por cara"
+                    },
+                    "OPTION2": {
+                        "TITLE": "2 por cara"
+                    },
+                    "OPTION3": {
+                        "TITLE": "4 por cara"
+                    }
+                }
+            },
+            "ORIENTATION": {
+                "TITLE": "¿ cómo quieres leer el documento ?",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "vertical"
+                    },
+                    "OPTION2": {
+                        "TITLE": "apaisado"
+                    }
+                }
+            },
+            "FINISHED": {
+                "TITLE": "acabado",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "sin acabado"
+                    },
+                    "OPTION2": {
+                        "TITLE": "grapado"
+                    },
+                    "OPTION3": {
+                        "TITLE": "encuadernado"
+                    },
+                    "OPTION4": {
+                        "TITLE": "perforado"
+                    },
+                    "OPTION5": {
+                        "TITLE": "plastificado"
+                    },
+                    "OPTION6": {
+                        "TITLE": "cortado"
+                    },
+                    "OPTION7": {
+                        "TITLE": "sangrado"
+                    }
+                }
+            },
+            "COVER": {
+                "TITLE": "portada",
+                "OPTIONS": {
+                    "OPTION1": {
+                        "TITLE": "sin portada"
+                    },
+                    "OPTION2": {
+                        "TITLE": "hoja blanca"
+                    },
+                    "OPTION3": {
+                        "TITLE": "página B/N"
+                    },
+                    "OPTION4": {
+                        "TITLE": "página a color"
+                    }
+                }
+            },
+            "EXTRA": {
+                "TITLE": "opciones extra",
+                "OPTIONS": {}
+            },
+            "COMMENTS": {
+                "TITLE": "comentarios",
+                "OPTIONS": {}
+            }
+        }
+    }
+}

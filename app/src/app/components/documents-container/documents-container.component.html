@@ -1,0 +1,54 @@
+<div [ngClass]="{
+    'documents-container-left':(!documentsContainerDirection || documentsContainerDirection =='left') && !gestorHidden,
+    'documents-container-right':(documentsContainerDirection && documentsContainerDirection =='right') && !gestorHidden,
+    'documents-container-left-gestor-hidden':(!documentsContainerDirection || documentsContainerDirection =='left') && gestorHidden,
+    'documents-container-right-gestor-hidden':(documentsContainerDirection && documentsContainerDirection =='right') && gestorHidden
+}">
+    <div class="documents-container-header">
+        <div class="documents-container-header-title">
+            <div [ngClass]="{'documents-container-header-title-logo':!logo}" [innerHTML]="(logo? logo : '') | safeHtml">
+            </div>
+        </div>
+        <div *ngIf="!configIcon"
+            [className]="'documents-container-header-tooglePB'+(gestorHidden ? ' documents-container-header-tooglePB-hidden' : '')"
+            (click)="toogleConfig($event)">
+            <div class="documents-container-header-tooglePB-icon">
+            </div>
+        </div>
+        <div *ngIf="configIcon"
+            [className]="'documents-container-header-tooglePB'+(gestorHidden ? ' documents-container-header-tooglePB-hidden' : '')"
+            (click)="toogleConfig($event)" [innerHTML]="configIcon!.content!.innerHTML!|safeHtml">
+        </div>
+        <div *ngIf="visibleIntroPB && infoIcon" class="documents-container-header-infoPB" (click)="activeIntro()"
+            [innerHTML]="infoIcon!.content!.innerHTML!|safeHtml">
+        </div>
+        <div *ngIf="visibleIntroPB && !infoIcon" class="documents-container-header-infoPB" (click)="activeIntro()">
+            <div class="documents-container-header-infoPB-icon">
+            </div>
+        </div>
+        <div *ngIf="!closeIcon" class="documents-container-header-closePB" (click)="activeApp($event)">
+            <!--{{"GENERIC.CLOSE" | translate}}-->
+            <div class="documents-container-header-closePB-icon">
+            </div>
+        </div>
+        <div *ngIf="closeIcon" class="documents-container-header-closePB" (click)="activeApp($event)"
+            [innerHTML]="closeIcon!.content!.innerHTML!|safeHtml">
+        </div>
+    </div>
+
+    <div *ngIf="!content" class="documents-groups-container">
+        <div *ngIf="groups$ && groups$.length" class="documents-container-dropable" [appDroppable]={id:1000}
+            (onDragEventCss)="onZoneEvent($event)"></div>
+        <app-documents-group class="document-container-group" *ngFor="let group of groups$; let index = index"
+            [index]="index+1" [group]="group" [update]="update" [ngClass]="{'selected':group['visible_options']}">
+        </app-documents-group>
+        <app-file-uploader *ngIf="!groups$ || !groups$.length" [mode]="'emptyGestor'"></app-file-uploader>
+    </div>
+    <div *ngIf="content" [className]="contentClearClassName ? contentClearClassName : ''"
+        [innerHTML]="contentClear | safeHtml" (click)="toogleContent();"></div>
+    <app-content *ngIf="content" [className]="'content-container ' + (contentClassName ? contentClassName : '')"
+        [innerHTML]="content | safeHtml"></app-content>
+    <div *ngIf="!content" class="documents-container-footer">
+        <app-order-container-footer></app-order-container-footer>
+    </div>
+</div>
